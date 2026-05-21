@@ -1,0 +1,819 @@
+```html
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>S. Macedo Representações</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700;800&display=swap"
+    rel="stylesheet">
+
+  <style>
+    :root {
+
+      --bg-light: #F7F9FC;
+      --bg-white: #FFFFFF;
+      --bg-dark: #0D1F30;
+      --bg-soft-dark: #12283D;
+
+      --primary: #0D1F30;
+      --accent: #1E6C93;
+      --accent-light: #2C89B7;
+
+      --text: #1B2733;
+      --text-soft: #667586;
+
+      --surface-card: rgba(255, 255, 255, .78);
+      --surface-border: rgba(255, 255, 255, .16);
+
+      --shadow-soft: 0 10px 30px rgba(13, 31, 48, .06);
+      --shadow-medium: 0 20px 60px rgba(13, 31, 48, .10);
+      --shadow-heavy: 0 35px 80px rgba(13, 31, 48, .16);
+
+      --radius: 28px;
+
+      --transition:
+        all .45s cubic-bezier(.16, 1, .3, 1);
+
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg-white);
+      color: var(--text);
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: .018;
+      background-image: url('https://grainy-gradients.vercel.app/noise.svg');
+      z-index: 9999;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4 {
+      font-family: 'Space Grotesk', sans-serif;
+      letter-spacing: -1px;
+    }
+
+    section {
+      padding: 140px 7%;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .container {
+      max-width: 1400px;
+      margin: auto;
+    }
+
+    .section-label {
+      display: inline-block;
+      margin-bottom: 18px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: .8rem;
+      font-weight: 700;
+      color: var(--accent);
+    }
+
+    .section-title {
+      font-size: clamp(2.6rem, 5vw, 4.5rem);
+      line-height: 1.05;
+      font-weight: 800;
+      margin-bottom: 24px;
+      color: var(--primary);
+    }
+
+    .section-title span {
+      color: var(--accent);
+    }
+
+    .section-text {
+      font-size: 1.08rem;
+      line-height: 1.9;
+      color: var(--text-soft);
+      max-width: 760px;
+    }
+
+    .premium-card {
+      background: var(--surface-card);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 1px solid rgba(255, 255, 255, .6);
+      box-shadow: var(--shadow-soft);
+      border-radius: var(--radius);
+      transition: var(--transition);
+    }
+
+    .premium-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-medium);
+      border-color: rgba(30, 108, 147, .18);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 16px 30px;
+      border-radius: 18px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: var(--transition);
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent), var(--accent-light));
+      color: #fff;
+      box-shadow: 0 15px 40px rgba(30, 108, 147, .25);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-4px);
+    }
+
+    .btn-secondary {
+      background: rgba(255, 255, 255, .08);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, .14);
+      color: #fff;
+    }
+
+    /* HERO */
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      background:
+        radial-gradient(circle at top, rgba(25, 84, 107, .28), transparent 35%),
+        linear-gradient(180deg, #0D1F30 0%, #08131E 100%);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .hero h1 {
+      font-size: clamp(3rem, 6vw, 6rem);
+      line-height: .95;
+      color: #fff;
+      margin-bottom: 30px;
+    }
+
+    .hero p {
+      font-size: 1.15rem;
+      line-height: 1.9;
+      color: rgba(255, 255, 255, .74);
+      max-width: 700px;
+      margin-bottom: 40px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    .hero-visual {
+      position: relative;
+    }
+
+    .hero-card {
+      padding: 34px;
+      border-radius: 36px;
+      background: rgba(255, 255, 255, .06);
+      backdrop-filter: blur(14px);
+      border: 1px solid rgba(255, 255, 255, .08);
+      box-shadow: var(--shadow-heavy);
+    }
+
+    .hero-card img {
+      width: 100%;
+      border-radius: 24px;
+      display: block;
+    }
+
+    .floating-badge {
+      position: absolute;
+      bottom: -20px;
+      left: -20px;
+      padding: 18px 22px;
+      background: #fff;
+      border-radius: 22px;
+      box-shadow: var(--shadow-medium);
+    }
+
+    .floating-badge strong {
+      display: block;
+      font-size: 1.4rem;
+      color: var(--primary);
+    }
+
+    .floating-badge span {
+      color: var(--text-soft);
+      font-size: .9rem;
+    }
+
+    /* BRANDS */
+
+    .brands {
+      background: linear-gradient(to bottom, #F7F9FC, #FFFFFF);
+    }
+
+    .brands-grid {
+      margin-top: 70px;
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 24px;
+    }
+
+    .brand-card {
+      padding: 34px 28px;
+      text-align: center;
+    }
+
+    .brand-logo {
+      height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 1.4rem;
+      color: var(--primary);
+    }
+
+    /* DIFFERENTIALS */
+
+    .differentials {
+      background:
+        radial-gradient(circle at top right, rgba(25, 84, 107, .05), transparent 30%),
+        #F7F9FC;
+    }
+
+    .diff-grid {
+      margin-top: 70px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .diff-card {
+      padding: 34px;
+    }
+
+    .diff-number {
+      width: 54px;
+      height: 54px;
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 22px;
+      background: rgba(30, 108, 147, .08);
+      font-weight: 800;
+      color: var(--accent);
+    }
+
+    .diff-card h3 {
+      font-size: 1.35rem;
+      margin-bottom: 14px;
+      color: var(--primary);
+    }
+
+    .diff-card p {
+      line-height: 1.8;
+      color: var(--text-soft);
+    }
+
+    /* PROCESS */
+
+    .process {
+      background:
+        linear-gradient(180deg, #0D1F30 0%, #10263A 100%);
+    }
+
+    .process .section-title,
+    .process .section-text {
+      color: #fff;
+    }
+
+    .process .section-text {
+      opacity: .75;
+    }
+
+    .process-grid {
+      margin-top: 80px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 28px;
+    }
+
+    .process-card {
+      padding: 34px;
+      background: rgba(255, 255, 255, .04);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, .06);
+      border-radius: 28px;
+    }
+
+    .process-card strong {
+      font-size: 3rem;
+      color: rgba(255, 255, 255, .16);
+      display: block;
+      margin-bottom: 18px;
+      font-family: 'Space Grotesk', sans-serif;
+    }
+
+    .process-card h3 {
+      color: #fff;
+      margin-bottom: 14px;
+      font-size: 1.3rem;
+    }
+
+    .process-card p {
+      line-height: 1.8;
+      color: rgba(255, 255, 255, .68);
+    }
+
+    /* INSTAGRAM */
+
+    .instagram {
+      background:
+        linear-gradient(180deg, #F7F9FC 0%, #FFFFFF 100%);
+    }
+
+    .instagram-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 70px;
+      align-items: center;
+    }
+
+    .instagram-phone {
+      position: relative;
+    }
+
+    .phone-card {
+      padding: 24px;
+      border-radius: 40px;
+      background: #fff;
+      box-shadow: var(--shadow-heavy);
+      max-width: 420px;
+      margin: auto;
+    }
+
+    .phone-card img {
+      width: 100%;
+      border-radius: 26px;
+      display: block;
+    }
+
+    .instagram-content-box {
+      padding: 40px;
+      margin-top: 34px;
+    }
+
+    .instagram-content-box h3 {
+      font-size: 1.7rem;
+      margin-bottom: 14px;
+      color: var(--primary);
+    }
+
+    .instagram-content-box p {
+      line-height: 1.9;
+      color: var(--text-soft);
+    }
+
+    /* CTA */
+
+    .cta {
+      background:
+        radial-gradient(circle at top, rgba(25, 84, 107, .25), transparent 35%),
+        linear-gradient(180deg, #0D1F30 0%, #091521 100%);
+      text-align: center;
+    }
+
+    .cta .section-title,
+    .cta .section-text {
+      color: #fff;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .cta .section-text {
+      opacity: .76;
+      margin-bottom: 40px;
+    }
+
+    /* FOOTER */
+
+    footer {
+      padding: 70px 7%;
+      background: #08131E;
+      border-top: 1px solid rgba(255, 255, 255, .05);
+    }
+
+    .footer-grid {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 30px;
+    }
+
+    .footer-logo {
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: #fff;
+      font-family: 'Space Grotesk', sans-serif;
+    }
+
+    .footer-text {
+      color: rgba(255, 255, 255, .55);
+      line-height: 1.8;
+      max-width: 500px;
+    }
+
+    /* RESPONSIVE */
+
+    @media(max-width:1100px) {
+
+      .hero-grid,
+      .instagram-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .brands-grid,
+      .diff-grid,
+      .process-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+    }
+
+    @media(max-width:768px) {
+
+      section {
+        padding: 90px 6%;
+      }
+
+      .hero {
+        min-height: auto;
+        padding-top: 120px;
+      }
+
+      .hero h1 {
+        font-size: 3.5rem;
+      }
+
+      .brands-grid,
+      .diff-grid,
+      .process-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-buttons {
+        flex-direction: column;
+      }
+
+      .btn {
+        width: 100%;
+      }
+
+      .footer-grid {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HERO -->
+
+  <section class="hero">
+
+    <div class="container hero-grid">
+
+      <div>
+
+        <span class="section-label">Representação Comercial Estratégica</span>
+
+        <h1>
+          Conectamos marcas ao <span style="color:#4EA9D3">crescimento comercial</span>
+        </h1>
+
+        <p>
+          Atuamos em São Paulo conectando indústrias, distribuidores e varejistas através de representação comercial
+          consultiva focada em expansão de mercado e aumento de vendas.
+        </p>
+
+        <div class="hero-buttons">
+          <a href="#contato" class="btn btn-primary">Solicitar Atendimento</a>
+          <a href="#instagram" class="btn btn-secondary">Conhecer Instagram</a>
+        </div>
+
+      </div>
+
+      <div class="hero-visual">
+
+        <div class="hero-card">
+          <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?q=80&w=1200&auto=format&fit=crop"
+            alt="Representação Comercial">
+        </div>
+
+        <div class="floating-badge">
+          <strong>+15 Marcas</strong>
+          <span>Representadas nacionalmente</span>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- BRANDS -->
+
+  <section class="brands">
+
+    <div class="container">
+
+      <span class="section-label">Marcas Representadas</span>
+
+      <h2 class="section-title">
+        Empresas com presença <span>nacional</span>
+      </h2>
+
+      <div class="brands-grid">
+
+        <div class="premium-card brand-card">
+          <div class="brand-logo">WECK</div>
+        </div>
+
+        <div class="premium-card brand-card">
+          <div class="brand-logo">TRAMEX</div>
+        </div>
+
+        <div class="premium-card brand-card">
+          <div class="brand-logo">MABILLON</div>
+        </div>
+
+        <div class="premium-card brand-card">
+          <div class="brand-logo">REGINA</div>
+        </div>
+
+        <div class="premium-card brand-card">
+          <div class="brand-logo">PROLINE</div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- DIFFERENTIALS -->
+
+  <section class="differentials">
+
+    <div class="container">
+
+      <span class="section-label">Diferenciais</span>
+
+      <h2 class="section-title">
+        O que diferencia nossa <span>representação</span>
+      </h2>
+
+      <div class="diff-grid">
+
+        <div class="premium-card diff-card">
+          <div class="diff-number">01</div>
+          <h3>Expansão Comercial</h3>
+          <p>
+            Estratégias focadas em crescimento sustentável, abertura de mercado e fortalecimento da marca no varejo.
+          </p>
+        </div>
+
+        <div class="premium-card diff-card">
+          <div class="diff-number">02</div>
+          <h3>Relacionamento B2B</h3>
+          <p>
+            Conectamos marcas, distribuidores e compradores através de atuação consultiva e presença comercial.
+          </p>
+        </div>
+
+        <div class="premium-card diff-card">
+          <div class="diff-number">03</div>
+          <h3>Atuação Estratégica</h3>
+          <p>
+            Presença forte em São Paulo com foco em prospecção, negociação e aumento de oportunidades comerciais.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- PROCESS -->
+
+  <section class="process">
+
+    <div class="container">
+
+      <span class="section-label">Metodologia Comercial</span>
+
+      <h2 class="section-title">
+        Da prospecção ao <span>resultado</span>
+      </h2>
+
+      <p class="section-text">
+        Uma operação estruturada para gerar crescimento comercial com previsibilidade, relacionamento e expansão de
+        mercado.
+      </p>
+
+      <div class="process-grid">
+
+        <div class="process-card">
+          <strong>01</strong>
+          <h3>Prospecção</h3>
+          <p>Mapeamento estratégico de oportunidades e abertura de relacionamento comercial.</p>
+        </div>
+
+        <div class="process-card">
+          <strong>02</strong>
+          <h3>Negociação</h3>
+          <p>Atuação consultiva alinhando posicionamento comercial e oportunidades de venda.</p>
+        </div>
+
+        <div class="process-card">
+          <strong>03</strong>
+          <h3>Expansão</h3>
+          <p>Fortalecimento da presença da marca no mercado e ampliação de canais comerciais.</p>
+        </div>
+
+        <div class="process-card">
+          <strong>04</strong>
+          <h3>Resultados</h3>
+          <p>Acompanhamento contínuo com foco em crescimento sustentável e relacionamento.</p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- INSTAGRAM -->
+
+  <section class="instagram" id="instagram">
+
+    <div class="container instagram-grid">
+
+      <div>
+
+        <span class="section-label">Instagram & Presença Digital</span>
+
+        <h2 class="section-title">
+          Acompanhe nossa atuação e fortaleça sua <span>marca</span>
+        </h2>
+
+        <p class="section-text">
+          Compartilhamos oportunidades, novidades do setor, estratégias comerciais e conteúdo voltado para marcas,
+          distribuidores e varejistas.
+        </p>
+
+        <div class="premium-card instagram-content-box">
+          <h3>Impulsione sua presença comercial</h3>
+          <p>
+            Buscando representação comercial em São Paulo para ampliar vendas, conquistar distribuidores e fortalecer
+            sua atuação no varejo? Conheça nossa atuação e acompanhe nossos conteúdos.
+          </p>
+        </div>
+
+        <br>
+
+        <a href="https://instagram.com" class="btn btn-primary" target="_blank">
+          Seguir no Instagram
+        </a>
+
+      </div>
+
+      <div class="instagram-phone">
+
+        <div class="phone-card">
+          <img src="https://images.unsplash.com/photo-1556740749-887f6717d7e4?q=80&w=1200&auto=format&fit=crop"
+            alt="Instagram">
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- CTA -->
+
+  <section class="cta" id="contato">
+
+    <div class="container">
+
+      <span class="section-label">Representação Comercial em São Paulo</span>
+
+      <h2 class="section-title">
+        Sua empresa precisa de uma <span>representação estratégica?</span>
+      </h2>
+
+      <p class="section-text">
+        Atuamos lado a lado com marcas que desejam expandir presença comercial, aumentar vendas e fortalecer
+        relacionamento com distribuidores e varejistas.
+      </p>
+
+      <a href="#" class="btn btn-primary">
+        Solicitar Atendimento
+      </a>
+
+    </div>
+
+  </section>
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    <div class="container footer-grid">
+
+      <div>
+        <div class="footer-logo">S. Macedo Representações</div>
+      </div>
+
+      <div class="footer-text">
+        Representação comercial estratégica em São Paulo conectando marcas, distribuidores e oportunidades de
+        crescimento.
+      </div>
+
+    </div>
+
+  </footer>
+
+  <script>
+
+    /* FLOATING EFFECT */
+
+    const heroCard = document.querySelector('.hero-card');
+    const phoneCard = document.querySelector('.phone-card');
+
+    let position = 0;
+
+    function floatingAnimation() {
+
+      position += 0.012;
+
+      const y1 = Math.sin(position) * 10;
+      const y2 = Math.cos(position) * 8;
+
+      heroCard.style.transform = `translateY(${y1}px)`;
+      phoneCard.style.transform = `translateY(${y2}px)`;
+
+      requestAnimationFrame(floatingAnimation);
+
+    }
+
+    floatingAnimation();
+
+  </script>
+
+</body>
+
+</html>
+```

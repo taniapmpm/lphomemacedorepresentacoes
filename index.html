@@ -1,0 +1,2528 @@
+<!--
+Página: Home — S. Macedo Negócios e Representações Ltda.
+Versão: 1.0
+Container ID: page-container-home
+Prefixo CSS: mr-home-
+Pasta imagens padrão: /imagenspadrao/
+Pasta imagens específicas: /imagens_home/
+Webhook: URL_WEBHOOK_CONTATO_HOME
+-->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Representante Comercial em São Paulo | S. Macedo Negócios e Representações</title>
+</head>
+<body>
+
+  <!-- Tailwind CSS via CDN -->
+  <link rel="preload" href="https://cdn.tailwindcss.com" as="script">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      important: true, // Garante que o Tailwind sobrescreva os tamanhos e fontes do Elementor
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+            display: ['Space Grotesk', 'sans-serif'],
+            serif: ['Playfair Display', 'serif'],
+            brand: ['Open Sans', 'sans-serif']
+          },
+          colors: {
+            brand: {
+              navy: '#0D1F30',
+              petroleum: '#19546B',
+              accent: '#19546B', /* Petroleum as accent */
+              neutral: '#C6C6C6',
+              gray: '#706F6F',
+              weck: '#ff7802',
+              tecnocuba: '#ff161f',
+              multiflon: '#981440',
+              regina: '#e9c720',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  
+  <!-- DNS Prefetch & Fontes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&family=Playfair+Display:italic,wght@400;700&family=Open+Sans:wght@700&display=swap" rel="stylesheet">
+  
+  <style>
+    /* FALLBACK CSS — Garantia de funcionamento Elementor */
+    :root {
+      --brand-navy: #0D1F30;
+      --brand-petroleum: #19546B;
+      --brand-accent: #19546B;
+      --brand-neutral: #C6C6C6;
+      --brand-white: #FFFFFF;
+      --brand-gray: #706F6F;
+      --footer-bg: #0d1b2a;
+      --brand-weck: #ff7802;
+      --brand-tecnocuba: #ff161f;
+      --brand-multiflon: #981440;
+      --brand-regina: #e9c720;
+    }
+    .bg-brand-navy { background-color: var(--brand-navy) !important; }
+    .text-brand-accent { color: var(--brand-accent) !important; }
+    .text-brand-weck { color: var(--brand-weck) !important; }
+    .text-brand-tecnocuba { color: var(--brand-tecnocuba) !important; }
+    .text-brand-multiflon { color: var(--brand-multiflon) !important; }
+    .text-brand-regina { color: var(--brand-regina) !important; }
+
+
+    /* Proteção de tipografia nativa */
+    #page-container-home,
+    #page-container-home h1, 
+    #page-container-home h2, 
+    #page-container-home h3, 
+    #page-container-home h4 { 
+      font-family: 'Space Grotesk', sans-serif !important; 
+    }
+    #page-container-home p, #page-container-home a, #page-container-home span {
+      font-family: 'Inter', sans-serif !important; 
+    }
+    
+    html, body {
+      overflow-x: hidden;
+      width: 100%;
+      -webkit-text-size-adjust: 100%;
+      margin: 0;
+      padding: 0;
+    }
+
+    #page-container-home {
+      background-color: #ffffff;
+      color: #0D1F30;
+      font-family: 'Inter', ui-sans-serif, system-ui, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      width: 100vw;
+      position: relative;
+      left: 50%;
+      right: 50%;
+      margin-left: -50vw;
+      margin-right: -50vw;
+      overflow-x: hidden;
+    }
+    #page-container-home ::selection {
+      background-color: var(--brand-accent);
+      color: #ffffff;
+    }
+    #page-container-home h1, #page-container-home h2, #page-container-home h3, #page-container-home h4 {
+      font-family: 'Space Grotesk', sans-serif;
+      letter-spacing: -0.025em;
+    }
+    .glass-card { background: rgba(255,255,255,0.8); backdrop-filter: blur(4px); border: 1px solid rgba(198,198,198,0.2); box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05); }
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: #f3f4f6; }
+    ::-webkit-scrollbar-thumb { background: rgba(13, 31, 48, 0.2); border-radius: 9999px; }
+    ::-webkit-scrollbar-thumb:hover { background: rgba(13, 31, 48, 0.4); }
+    
+    /* Marquee animation */
+    @keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+    .mr-home-animate-marquee { display: flex; animation: marquee 30s linear infinite; }
+
+    @media (max-width: 768px) {
+      .mr-home-animate-marquee { animation-duration: 15s; }
+    }
+
+    /* RESPONSIVIDADE MOBILE */
+    @media (max-width: 1024px) {
+      .text-7xl { font-size: 3rem !important; }
+      .text-6xl { font-size: 2.5rem !important; }
+      .text-5xl { font-size: 2rem !important; }
+    }
+
+    @media (max-width: 768px) {
+      /* --- TIPOGRAFIA --- */
+      .text-7xl { font-size: 2.5rem !important; line-height: 1.05 !important; }
+      .text-6xl { font-size: 2.25rem !important; line-height: 1.1 !important; }
+      .text-5xl { font-size: 1.85rem !important; line-height: 1.15 !important; }
+      .text-3xl { font-size: 1.25rem !important; }
+      .text-2xl { font-size: 1.1rem !important; }
+      .text-xl { font-size: 1rem !important; }
+
+      /* --- ESPAÇAMENTO DAS SEÇÕES --- */
+      .py-32 { padding-top: 3rem !important; padding-bottom: 3rem !important; }
+      .pt-40 { padding-top: 6rem !important; }
+      .pb-20 { padding-bottom: 2.5rem !important; }
+      .mb-20 { margin-bottom: 2.5rem !important; }
+      .mb-16 { margin-bottom: 2rem !important; }
+      .gap-20 { gap: 2.5rem !important; }
+      .gap-16 { gap: 2rem !important; }
+      .gap-12 { gap: 1.5rem !important; }
+
+      /* --- CATEGORIAS: Cards com imagem --- */
+      .mr-home-card-imagem {
+        padding: 12px !important;
+        border-radius: 20px !important;
+        min-height: auto !important;
+        aspect-ratio: 4/3 !important;
+      }
+      .mr-home-grid-2-cols {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 10px !important;
+      }
+      .mr-home-grid-2-cols > div {
+        grid-column: span 1 !important;
+      }
+
+      /* --- MARQUEE: Logos de clientes --- */
+      .mr-home-cliente-logo {
+        width: 140px !important;
+        height: 70px !important;
+        padding: 12px !important;
+        border-radius: 16px !important;
+      }
+
+      /* --- FORMULÁRIOS --- */
+      .p-10 { padding: 1.25rem !important; }
+
+      /* --- FOOTER --- */
+      .footer-main {
+        grid-template-columns: 1fr !important;
+        padding: 32px 20px 0 !important;
+        gap: 24px !important;
+      }
+
+      /* --- BOTÕES FLUTUANTES --- */
+      .fixed.bottom-8.right-8 {
+        bottom: 16px !important;
+        right: 16px !important;
+      }
+      .w-16.h-16 { width: 52px !important; height: 52px !important; }
+      .w-14.h-14 { width: 44px !important; height: 44px !important; }
+    }
+
+    @media (max-width: 380px) {
+      .text-5xl { font-size: 1.6rem !important; }
+      .text-3xl { font-size: 1.1rem !important; }
+      .mr-home-grid-2-cols { gap: 8px !important; }
+    }
+    
+    /* Footer CSS */
+    :root {
+      --footer-bg-card: #112234;
+      --footer-bg-hover: #163048;
+      --footer-accent: #19546B;
+      --footer-accent-glow: rgba(25, 84, 107, 0.25);
+      --footer-text-primary: #e8edf2;
+      --footer-text-muted: #6b8399;
+      --footer-text-dim: #3d5a72;
+      --footer-border: rgba(255,255,255,0.06);
+      --footer-border-accent: rgba(112, 111, 111, 0.4);
+    }
+
+    .custom-footer {
+      width: 100%;
+      background: var(--footer-bg) !important;
+      position: relative;
+      overflow: hidden;
+      font-family: 'DM Sans', sans-serif;
+      color: var(--footer-text-primary);
+      text-align: left;
+    }
+
+    .custom-footer * { box-sizing: border-box; }
+
+    .custom-footer::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--footer-accent) 30%, var(--footer-accent) 70%, transparent);
+    }
+
+    .custom-footer::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        radial-gradient(ellipse 60% 50% at 80% 50%, rgba(25, 84, 107, 0.04) 0%, transparent 70%),
+        radial-gradient(ellipse 40% 60% at 5% 80%, rgba(13, 31, 48, 0.08) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    .footer-main {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 64px 48px 0;
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 0.8fr 1.2fr;
+      gap: 0 48px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .brand-header { display: flex; align-items: center; gap: 16px; margin-bottom: 24px; }
+    .brand-avatar { width: 52px; height: 52px; border-radius: 50%; overflow: hidden; flex-shrink: 0; }
+    .brand-avatar img { width: 100%; height: 100%; object-fit: cover; }
+    .brand-name { font-size: 15px; font-weight: 600; color: var(--footer-text-primary); line-height: 1.35; }
+    .brand-tagline { font-size: 13px; color: var(--footer-text-muted); line-height: 1.7; margin-bottom: 28px; font-weight: 300; }
+    .divider-short { width: 40px; height: 2px; background: var(--footer-accent); margin-bottom: 28px; border-radius: 2px; }
+    
+    .social-links { display: flex; gap: 10px; }
+    .social-btn {
+      width: 40px; height: 40px; border-radius: 10px; background: var(--footer-bg-card);
+      border: 1px solid var(--footer-border); display: flex; align-items: center; justify-content: center;
+      color: var(--footer-text-muted); cursor: pointer; transition: all 0.25s ease; text-decoration: none;
+    }
+    .social-btn:hover {
+      background: var(--footer-accent); border-color: var(--footer-accent); color: #fff;
+      transform: translateY(-2px); box-shadow: 0 8px 20px var(--footer-accent-glow);
+    }
+    .social-btn svg { width: 18px; height: 18px; fill: currentColor; }
+
+    .col-label {
+      font-family: 'DM Mono', monospace; font-size: 11.5px; font-weight: 500; letter-spacing: 0.18em;
+      color: #ffffff; text-transform: uppercase; margin-bottom: 28px; display: flex; align-items: center; gap: 10px;
+    }
+    .col-label::after { content: ''; flex: 1; height: 1px; background: var(--footer-border-accent); }
+
+    .brand-list { display: flex; flex-direction: column; gap: 8px; }
+    .brand-item {
+      display: flex; align-items: center; gap: 12px; padding: 12px 16px; background: var(--footer-bg-card);
+      border: 1px solid var(--footer-border); border-radius: 10px; cursor: pointer; transition: all 0.25s ease; text-decoration: none;
+    }
+    .brand-item:hover { background: var(--footer-bg-hover); border-color: var(--footer-border-accent); transform: translateX(4px); }
+    .brand-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--footer-accent); flex-shrink: 0; transition: transform 0.2s; }
+    .brand-item:hover .brand-dot { transform: scale(1.6); box-shadow: 0 0 8px var(--footer-accent); }
+    .brand-item-name { font-family: 'Bebas Neue', sans-serif; font-size: 17px; letter-spacing: 0.08em; color: var(--footer-text-primary); transition: color 0.2s; }
+    .brand-item:hover .brand-item-name { color: #fff; }
+
+    .nav-list { display: flex; flex-direction: column; gap: 4px; }
+    .nav-item {
+      display: flex; align-items: center; gap: 10px; padding: 9px 12px; border-radius: 8px;
+      color: var(--footer-text-muted); font-size: 14px; font-weight: 400; cursor: pointer; transition: all 0.2s ease; text-decoration: none;
+    }
+    .nav-item::before { content: ''; width: 0; height: 1px; background: var(--footer-accent); transition: width 0.25s ease; }
+    .nav-item:hover { color: var(--footer-text-primary); background: rgba(25, 84, 107, 0.06); padding-left: 16px; }
+    .nav-item:hover::before { width: 14px; }
+
+    .contact-list { display: flex; flex-direction: column; gap: 12px; }
+    .contact-card {
+      display: flex; align-items: center; gap: 14px; padding: 14px 16px; background: var(--footer-bg-card);
+      border: 1px solid var(--footer-border); border-radius: 12px; text-decoration: none; cursor: pointer; transition: all 0.25s ease;
+    }
+    .contact-card:hover {
+      background: var(--footer-bg-hover); border-color: var(--footer-border-accent);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.2); transform: translateY(-2px);
+    }
+    .contact-icon {
+      width: 42px; height: 42px; border-radius: 10px; background: #22c55e;
+      display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+      box-shadow: 0 0 12px rgba(34, 197, 94, 0.5); animation: pulse-footer 2s infinite;
+    }
+    .contact-icon svg { width: 18px; height: 18px; fill: white; }
+    .contact-type { font-family: 'DM Mono', monospace; font-size: 10.35px; font-weight: 500; letter-spacing: 0.15em; color: #ffffff; text-transform: uppercase; margin-bottom: 3px; }
+    .contact-value { font-size: 13.5px; font-weight: 600; color: var(--footer-text-primary); }
+
+    .footer-bottom {
+      max-width: 1280px; margin: 0 auto; padding: 24px 48px; margin-top: 48px;
+      display: flex; align-items: center; justify-content: space-between; border-top: 1px solid var(--footer-border); position: relative; z-index: 1;
+    }
+    .footer-copyright { font-size: 12px; color: var(--footer-text-dim); font-weight: 300; }
+    .footer-copyright span { color: var(--footer-text-muted); }
+    .footer-badge {
+      display: flex; align-items: center; gap: 8px; padding: 6px 14px; background: var(--footer-bg-card);
+      border: 1px solid var(--footer-border); border-radius: 20px; font-family: 'DM Mono', monospace; font-size: 10px; color: var(--footer-text-dim); letter-spacing: 0.08em;
+    }
+    .badge-dot { width: 6px; height: 6px; border-radius: 50%; background: #22c55e; box-shadow: 0 0 6px rgba(34,197,94,0.6); animation: pulse-footer 2s infinite; }
+
+    @keyframes pulse-footer { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
+    .brand-item, .nav-item, .contact-card, .social-btn { opacity: 0; animation: fadeUpFooter 0.5s forwards; }
+    @keyframes fadeUpFooter { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+    .brand-item:nth-child(1) { animation-delay: 0.05s; }
+    .brand-item:nth-child(2) { animation-delay: 0.1s; }
+    .brand-item:nth-child(3) { animation-delay: 0.15s; }
+    .brand-item:nth-child(4) { animation-delay: 0.20s; }
+    .nav-item:nth-child(1)   { animation-delay: 0.08s; }
+    .nav-item:nth-child(2)   { animation-delay: 0.13s; }
+    .nav-item:nth-child(3)   { animation-delay: 0.18s; }
+    .nav-item:nth-child(4)   { animation-delay: 0.23s; }
+    .nav-item:nth-child(5)   { animation-delay: 0.28s; }
+    .nav-item:nth-child(6)   { animation-delay: 0.33s; }
+    .contact-card:nth-child(1){ animation-delay: 0.1s; }
+    .contact-card:nth-child(2){ animation-delay: 0.17s; }
+    .social-btn:nth-child(1)  { animation-delay: 0.2s; }
+    .social-btn:nth-child(2)  { animation-delay: 0.28s; }
+
+    @media (max-width: 900px) {
+      .footer-main { grid-template-columns: 1fr 1fr; gap: 40px; }
+      .footer-bottom { flex-direction: column; gap: 16px; text-align: center; }
+    }
+    @media (max-width: 600px) { .footer-main { grid-template-columns: 1fr; } }
+    
+    /* Hero animations */
+    @keyframes floatLogoSafe {
+      0%, 100% { transform: translateY(0px); }
+      50%      { transform: translateY(-15px); }
+    }
+    @keyframes popInLogo {
+      0% { opacity: 0; transform: scale(0.95); }
+      100% { opacity: 1; transform: scale(1); }
+    }
+    .mr-home-logo-anim-combo {
+      animation: popInLogo 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards, floatLogoSafe 5s ease-in-out 0.6s infinite;
+    }
+
+    /* Separador Global removido para um design mais limpo (separação por whitespace e cores) */
+    .mr-section-divider {
+      display: none;
+    }
+  </style>
+
+<div id="page-container-home">
+
+  <!-- ============================================================
+       SEÇÃO 1 — NAVBAR
+       ============================================================ -->
+  <nav class="fixed top-0 left-0 w-full bg-white/95 backdrop-blur-xl z-[100] border-b border-brand-neutral/10 py-9 shadow-md transition-all duration-500 ease-in-out">
+    <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
+      <div class="flex items-center gap-6">
+        <a href="/" class="flex items-center gap-4 group cursor-pointer">
+          <div class="relative">
+            <div class="w-14 h-14 rounded-full flex items-center justify-center overflow-hidden group-hover:scale-105 transition-transform duration-500">
+              <img src="/imagenspadrao/logo-sm.png" alt="S. Macedo Logo" class="w-full h-full object-cover" width="56" height="56" loading="eager" decoding="async"/>
+            </div>
+          </div>
+          <div class="flex flex-col">
+            <span class="text-[13px] sm:text-base md:text-lg font-brand font-bold tracking-tight leading-tight transition-colors duration-300 text-brand-navy whitespace-nowrap">S. Macedo Negócios e</span>
+            <span class="text-[13px] sm:text-base md:text-lg font-brand font-bold tracking-tight leading-none transition-colors duration-300 text-brand-navy whitespace-nowrap">Representações Ltda.</span>
+          </div>
+        </a>
+      </div>
+      
+      <div class="hidden md:flex items-center gap-4 lg:gap-6">
+        <a href="#portfolio" class="text-[12px] lg:text-[13px] font-bold uppercase tracking-widest text-brand-navy/70 hover:text-brand-accent transition-all relative group">Weck<span class="absolute -bottom-1 left-0 w-0 h-[2px] bg-brand-accent transition-all duration-300 group-hover:w-full"></span></a>
+        <a href="#portfolio" class="text-[12px] lg:text-[13px] font-bold uppercase tracking-widest text-brand-navy/70 hover:text-brand-accent transition-all relative group">Tecnocuba<span class="absolute -bottom-1 left-0 w-0 h-[2px] bg-brand-accent transition-all duration-300 group-hover:w-full"></span></a>
+        <a href="#portfolio" class="text-[12px] lg:text-[13px] font-bold uppercase tracking-widest text-brand-navy/70 hover:text-brand-accent transition-all relative group">Multiflon<span class="absolute -bottom-1 left-0 w-0 h-[2px] bg-brand-accent transition-all duration-300 group-hover:w-full"></span></a>
+        <a href="#portfolio" class="text-[12px] lg:text-[13px] font-bold uppercase tracking-widest text-brand-navy/70 hover:text-brand-accent transition-all relative group">Cerâmica Regina<span class="absolute -bottom-1 left-0 w-0 h-[2px] bg-brand-accent transition-all duration-300 group-hover:w-full"></span></a>
+        <a href="#contato" class="text-[12px] lg:text-[13px] font-bold uppercase tracking-widest text-brand-navy/70 hover:text-brand-accent transition-all relative group">Contato<span class="absolute -bottom-1 left-0 w-0 h-[2px] bg-brand-accent transition-all duration-300 group-hover:w-full"></span></a>
+        <a href="https://wa.me/5511987122890" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 bg-brand-navy text-white px-4 py-2.5 lg:px-5 lg:py-3 rounded-xl text-[12px] lg:text-[13px] font-black uppercase tracking-widest hover:bg-brand-petroleum transition-all shadow-lg hover:-translate-y-0.5 active:translate-y-0 whitespace-nowrap">
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-phone" aria-hidden="true"><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"></path></svg>
+          <span>(11) 98712-2890</span>
+        </a>
+      </div>
+      
+      <button id="mobile-menu-button" class="md:hidden text-brand-navy" aria-label="Abrir menu mobile">
+        <svg id="hamburger-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+        <svg id="close-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x hidden"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+      </button>
+    </div>
+    
+    <div class="absolute top-full left-0 w-full bg-white shadow-xl border-t border-brand-neutral/10 p-6 md:hidden" style="display: none;">
+      <div class="flex flex-col gap-4">
+        <a href="#portfolio" class="text-lg font-display font-medium text-brand-navy">Weck</a>
+        <a href="#portfolio" class="text-lg font-display font-medium text-brand-navy">Tecnocuba</a>
+        <a href="#portfolio" class="text-lg font-display font-medium text-brand-navy">Multiflon</a>
+        <a href="#portfolio" class="text-lg font-display font-medium text-brand-navy">Cerâmica Regina</a>
+        <a href="#contato" class="text-lg font-display font-medium text-brand-navy">Contato</a>
+        <hr class="border-brand-neutral/20"/>
+        <a href="tel:+5511987122890" class="flex items-center justify-center gap-2 bg-brand-accent text-white py-4 rounded-xl font-bold">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-phone" aria-hidden="true"><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"></path></svg>
+          <span>(11) 98712-2890</span>
+        </a>
+      </div>
+    </div>
+  </nav>
+  
+  <div class="fixed bottom-8 right-8 z-[100] flex flex-col gap-4">
+    <a href="https://wa.me/5511987122890" target="_blank" rel="noopener noreferrer" class="w-16 h-16 bg-[#25D366] text-white rounded-full shadow-2xl flex items-center justify-center hover:bg-[#128C7E] transition-colors group relative" tabindex="0">
+      <div class="absolute right-full mr-4 bg-white text-brand-navy px-4 py-2 rounded-xl text-xs font-bold shadow-xl opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none border border-brand-neutral/10">Falar com Representante</div>
+      <svg viewBox="0 0 24 24" width="32" height="32" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path></svg>
+    </a>
+    <a href="#" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;" class="w-14 h-14 bg-brand-navy text-white rounded-full shadow-2xl flex items-center justify-center hover:bg-brand-accent transition-colors" tabindex="0" aria-label="Voltar ao topo">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-right -rotate-90" aria-hidden="true"><path d="m9 18 6-6-6-6"></path></svg>
+    </a>
+  </div>
+
+  <!-- ============================================================
+       SEÇÃO 2 — HERO
+       ============================================================ -->
+  <section id="home" class="relative min-h-screen flex items-center overflow-hidden bg-[#0D1F30]" style="padding-top: 180px; padding-bottom: 80px;">
+    
+    <!-- Imagem de fundo sutil -->
+    <div class="absolute inset-0 z-0 overflow-hidden bg-brand-navy">
+      <img src="/imagenspadrao/inspiracao-fundo.jpg" alt="Fundo S. Macedo" class="absolute inset-0 w-full h-full object-cover opacity-20" style="mix-blend-mode: multiply;" loading="eager" fetchpriority="high"/>
+      <div class="absolute inset-0 bg-gradient-to-t from-brand-navy via-brand-navy/80 to-transparent"></div>
+    </div>
+
+    <!-- Container da Animação de Pontos -->
+    <div id="canvas-container" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; pointer-events: none; overflow: hidden;"></div>
+
+    <div class="max-w-7xl mx-auto px-6 relative z-10 w-full">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-8 items-center">
+        <!-- Lado Esquerdo: Texto -->
+        <div class="text-center lg:text-left">
+          <h1 class="text-4xl md:text-5xl lg:text-6xl font-display font-black text-white mb-6 leading-[1.05] tracking-tight" style="text-shadow: 0 4px 20px rgba(0,0,0,0.5);">
+            Representante Comercial<br/>
+            <span class="text-brand-accent brightness-150">Estratégico</span> em São Paulo
+          </h1>
+          
+          <h2 class="text-base md:text-lg text-white/80 max-w-xl mx-auto lg:mx-0 leading-relaxed mb-10 font-light" style="text-shadow: 0 2px 10px rgba(0,0,0,0.8);">
+            Silvio Macedo está há mais de 35 anos no mercado de útilidades domésticas conectando empresas ao mercado paulista com estrutura comercial, tecnologia e atendimento especializado.
+          </h2>
+          
+          <div class="flex flex-wrap gap-4 justify-center lg:justify-start">
+            <a href="#portfolio" class="bg-brand-accent text-white px-4 md:px-8 py-4 md:py-5 rounded-2xl font-black text-[11px] md:text-[13px] w-full sm:w-auto justify-center uppercase tracking-widest flex items-center gap-2 md:gap-3 hover:bg-white hover:text-brand-navy transition-all shadow-md hover:shadow-lg group">
+              <span class="whitespace-nowrap">Quem é Silvio Macedo</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="group-hover:translate-x-1 transition-transform shrink-0"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </a>
+            
+            <a href="#contato" class="bg-white/10 backdrop-blur-xl border border-white/20 text-white px-4 md:px-8 py-4 md:py-5 rounded-2xl font-black text-[11px] md:text-[13px] w-full sm:w-auto justify-center uppercase tracking-widest hover:bg-white/20 hover:border-white/40 transition-all flex items-center gap-2 md:gap-3 shadow-lg">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="shrink-0"><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"/></svg>
+              <span class="whitespace-nowrap">Vamos Conversar</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Lado Direito: Imagem -->
+        <div class="relative w-full flex justify-center lg:justify-end mt-12 lg:mt-0">
+          <div class="relative w-full max-w-md lg:max-w-[85%] overflow-hidden shadow-[0_20px_60px_rgba(0,0,0,0.5)] group bg-white" style="border-radius: 45% 10% 45% 45%;">
+            <img src="/imagenspadrao/macedo-representacoes.webp" alt="Silvio Macedo Representações" class="w-full h-auto block group-hover:scale-105 transition-transform duration-700" loading="eager" fetchpriority="high"/>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="mr-section-divider"></div>
+  </section>
+
+  <!-- ============================================================
+       SEÇÃO 3 — MARQUEE
+       ============================================================ -->
+  <div class="bg-brand-navy py-6 overflow-hidden border-t border-white/10">
+    <div class="flex whitespace-nowrap mr-home-animate-marquee">
+      <!-- Duplicated elements for continuous loop -->
+      <div class="flex items-center gap-4 px-12 text-white/80 text-xs font-bold tracking-[0.2em] uppercase"><span class="text-brand-accent"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-users"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><path d="M16 3.128a4 4 0 0 1 0 7.744"></path><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><circle cx="9" cy="7" r="4"></circle></svg></span>REPRESENTAÇÃO COMERCIAL B2B</div>
+      <div class="flex items-center gap-4 px-12 text-white/80 text-xs font-bold tracking-[0.2em] uppercase"><span class="text-brand-accent"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-map-pin"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"></path><circle cx="12" cy="10" r="3"></circle></svg></span>ATENDIMENTO EM TODO O ESTADO DE SÃO PAULO</div>
+      <div class="flex items-center gap-4 px-12 text-white/80 text-xs font-bold tracking-[0.2em] uppercase"><span class="text-brand-accent"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-award"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg></span>MAIS DE 35 ANOS DE MERCADO</div>
+      <div class="flex items-center gap-4 px-12 text-white/80 text-xs font-bold tracking-[0.2em] uppercase"><span class="text-brand-accent"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-briefcase"><rect width="20" height="14" x="2" y="7" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg></span>VISITAS PRESENCIAIS E AMOSTRAS</div>
+      <div class="flex items-center gap-4 px-12 text-white/80 text-xs font-bold tracking-[0.2em] uppercase"><span class="text-brand-accent"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-map"><polygon points="3 6 9 3 15 6 21 3 21 18 15 21 9 18 3 21"/><line x1="9" x2="9" y1="3" y2="18"/><line x1="15" x2="15" y1="6" y2="21"/></svg></span>MAPA GEO-LOCALIZADOR DE CLIENTES</div>
+      <div class="flex items-center gap-4 px-12 text-white/80 text-xs font-bold tracking-[0.2em] uppercase"><span class="text-brand-accent"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-trending-up"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg></span>ANÚNCIOS META E GOOGLE ADS</div>
+
+      <!-- Duplicates -->
+      <div class="flex items-center gap-4 px-12 text-white/80 text-xs font-bold tracking-[0.2em] uppercase"><span class="text-brand-accent"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-users"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><path d="M16 3.128a4 4 0 0 1 0 7.744"></path><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><circle cx="9" cy="7" r="4"></circle></svg></span>REPRESENTAÇÃO COMERCIAL B2B</div>
+      <div class="flex items-center gap-4 px-12 text-white/80 text-xs font-bold tracking-[0.2em] uppercase"><span class="text-brand-accent"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-map-pin"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"></path><circle cx="12" cy="10" r="3"></circle></svg></span>ATENDIMENTO EM TODO O ESTADO DE SÃO PAULO</div>
+      <div class="flex items-center gap-4 px-12 text-white/80 text-xs font-bold tracking-[0.2em] uppercase"><span class="text-brand-accent"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-award"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg></span>MAIS DE 35 ANOS DE MERCADO</div>
+      <div class="flex items-center gap-4 px-12 text-white/80 text-xs font-bold tracking-[0.2em] uppercase"><span class="text-brand-accent"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-briefcase"><rect width="20" height="14" x="2" y="7" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg></span>VISITAS PRESENCIAIS E AMOSTRAS</div>
+      <div class="flex items-center gap-4 px-12 text-white/80 text-xs font-bold tracking-[0.2em] uppercase"><span class="text-brand-accent"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-map"><polygon points="3 6 9 3 15 6 21 3 21 18 15 21 9 18 3 21"/><line x1="9" x2="9" y1="3" y2="18"/><line x1="15" x2="15" y1="6" y2="21"/></svg></span>MAPA GEO-LOCALIZADOR DE CLIENTES</div>
+      <div class="flex items-center gap-4 px-12 text-white/80 text-xs font-bold tracking-[0.2em] uppercase"><span class="text-brand-accent"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-trending-up"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg></span>ANÚNCIOS META E GOOGLE ADS</div>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       SEÇÃO 4 — PORTFÓLIO DE MARCAS
+       ============================================================ -->
+  <section id="portfolio" class="py-32 bg-[#F9FAFB]">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
+        <div class="max-w-2xl">
+          <span class="text-xs font-bold uppercase tracking-widest text-brand-accent mb-4 block">Empresas que Represento</span>
+          <h2 class="text-5xl font-display font-black text-brand-navy leading-tight">Marcas com <span class="text-brand-petroleum">Presença Nacional</span></h2>
+          <p class="text-brand-navy/50 mt-4">Portfólio selecionado para atender lojistas, atacadistas, redes de varejo e distribuidores em todo o Estado de São Paulo.</p>
+        </div>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+        <!-- Weck -->
+        <div class="group cursor-pointer bg-white rounded-[32px] p-8 shadow-sm hover:shadow-2xl transition-all duration-500 border border-brand-neutral/10 flex flex-col h-full js-scroll-anim" style="opacity:0; transform:translateY(20px);">
+          <div class="h-52 mb-6 flex items-center justify-center">
+            <img src="/imagenspadrao/weck-logo.jpg" alt="Weck Logo" class="max-h-full object-contain group-hover:scale-110 transition-transform duration-700" loading="lazy" decoding="async" width="200" height="100"/>
+          </div>
+          <div class="mt-auto">
+            <h4 class="text-xl font-display font-black text-brand-weck group-hover:text-brand-accent transition-colors mb-2">Weck</h4>
+            <p class="text-sm text-brand-navy/60 mb-6">Linha Utilitária Doméstica e Profissional</p>
+            <a href="/representante-weck/" class="inline-flex items-center gap-2 text-sm font-bold text-brand-weck hover:text-brand-navy transition-colors">
+              Conhecer <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right group-hover:translate-x-1 transition-transform"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Tecnocuba -->
+        <div class="group cursor-pointer bg-white rounded-[32px] p-8 shadow-sm hover:shadow-2xl transition-all duration-500 border border-brand-neutral/10 flex flex-col h-full js-scroll-anim" style="opacity:0; transform:translateY(20px); transition-delay: 0.1s;">
+          <div class="h-52 mb-6 flex items-center justify-center">
+            <img src="/imagenspadrao/tecnocuba-logo.jpg" alt="Tecnocuba Logo" class="max-h-full object-contain group-hover:scale-110 transition-transform duration-700" loading="lazy" decoding="async" width="200" height="100"/>
+          </div>
+          <div class="mt-auto">
+            <h4 class="text-xl font-display font-black text-brand-tecnocuba group-hover:text-brand-accent transition-colors mb-2">Tecnocuba</h4>
+            <p class="text-sm text-brand-navy/60 mb-6">Linha Inox Gastronômica e Construção Civil</p>
+            <a href="/representante-tecnocuba/" class="inline-flex items-center gap-2 text-sm font-bold text-brand-tecnocuba hover:text-brand-navy transition-colors">
+              Conhecer <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right group-hover:translate-x-1 transition-transform"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Multiflon -->
+        <div class="group cursor-pointer bg-white rounded-[32px] p-8 shadow-sm hover:shadow-2xl transition-all duration-500 border border-brand-neutral/10 flex flex-col h-full js-scroll-anim" style="opacity:0; transform:translateY(20px); transition-delay: 0.2s;">
+          <div class="h-52 mb-6 flex items-center justify-center">
+            <img src="/imagenspadrao/multiflon-logo.jpg" alt="Multiflon Logo" class="max-h-full object-contain group-hover:scale-110 transition-transform duration-700" loading="lazy" decoding="async" width="200" height="100"/>
+          </div>
+          <div class="mt-auto">
+            <h4 class="text-xl font-display font-black text-brand-multiflon group-hover:text-brand-accent transition-colors mb-2">Multiflon</h4>
+            <p class="text-sm text-brand-navy/60 mb-6">Linha Panelas e Formas</p>
+            <a href="/representante-multiflon/" class="inline-flex items-center gap-2 text-sm font-bold text-brand-multiflon hover:text-brand-navy transition-colors">
+              Conhecer <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right group-hover:translate-x-1 transition-transform"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Cerâmica Regina -->
+        <div class="group cursor-pointer bg-white rounded-[32px] p-8 shadow-sm hover:shadow-2xl transition-all duration-500 border border-brand-neutral/10 flex flex-col h-full js-scroll-anim" style="opacity:0; transform:translateY(20px); transition-delay: 0.3s;">
+          <div class="h-52 mb-6 flex items-center justify-center">
+            <img src="/imagenspadrao/regina-logo.jpg" alt="Cerâmica Regina Logo" class="max-h-full object-contain group-hover:scale-110 transition-transform duration-700" loading="lazy" decoding="async" width="200" height="100"/>
+          </div>
+          <div class="mt-auto">
+            <h4 class="text-xl font-display font-black text-brand-regina group-hover:text-brand-accent transition-colors mb-2">Cerâmica Regina</h4>
+            <p class="text-sm text-brand-navy/60 mb-6">Linha de Cerâmicas</p>
+            <a href="/representante-ceramica-regina/" class="inline-flex items-center gap-2 text-sm font-bold text-brand-regina hover:text-brand-navy transition-colors">
+              Conhecer <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right group-hover:translate-x-1 transition-transform"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="mr-section-divider"></div>
+  </section>
+
+  <!-- ============================================================
+       SEÇÃO 5 — DIFERENCIAIS COMPETITIVOS
+       ============================================================ -->
+  <section class="py-32 relative bg-white overflow-hidden">
+    <!-- Imagem de fundo sutil -->
+    <div class="absolute inset-0 z-0">
+      <img src="/imagenspadrao/backgroud3.jpg" alt="Fundo Diferenciais S. Macedo" class="w-full h-full object-cover opacity-5" loading="lazy" decoding="async"/>
+    </div>
+    <div class="max-w-7xl mx-auto px-6 relative z-10">
+      <div class="text-center mb-20">
+        <span class="text-xs font-bold uppercase tracking-widest text-brand-accent mb-4 block">Por que a S. Macedo</span>
+        <h2 class="text-5xl font-display font-black text-brand-navy leading-tight">O que diferencia este <br/><span class="text-brand-petroleum">representante</span></h2>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+        <!-- Diff 1 -->
+        <div class="p-8 rounded-[32px] bg-[#F9FAFB] border border-brand-neutral/10 hover:shadow-lg transition-all js-scroll-anim" style="opacity:0; transform:translateY(20px);">
+          <div class="w-14 h-14 bg-brand-accent/10 rounded-2xl flex items-center justify-center text-brand-accent mb-6">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-briefcase"><rect width="20" height="14" x="2" y="7" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+          </div>
+          <h4 class="text-xl font-bold text-brand-navy mb-3">Experiência de Mercado</h4>
+          <p class="text-brand-navy/60 leading-relaxed text-sm">Mais de 35 anos de atuação no segmento B2B, com profundo conhecimento dos canais de distribuição em São Paulo.</p>
+        </div>
+
+        <!-- Diff 2 -->
+        <div class="p-8 rounded-[32px] bg-[#F9FAFB] border border-brand-neutral/10 hover:shadow-lg transition-all js-scroll-anim" style="opacity:0; transform:translateY(20px); transition-delay: 0.1s;">
+          <div class="w-14 h-14 bg-brand-accent/10 rounded-2xl flex items-center justify-center text-brand-accent mb-6">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-users"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><path d="M16 3.128a4 4 0 0 1 0 7.744"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><circle cx="9" cy="7" r="4"/></svg>
+          </div>
+          <h4 class="text-xl font-bold text-brand-navy mb-3">Clientes</h4>
+          <p class="text-brand-navy/60 leading-relaxed text-sm">Base consolidada de lojistas, atacadistas, redes de varejo e distribuidores com CNPJ ativos em todo o Estado.</p>
+        </div>
+
+        <!-- Diff 3 -->
+        <div class="p-8 rounded-[32px] bg-[#F9FAFB] border border-brand-neutral/10 hover:shadow-lg transition-all js-scroll-anim" style="opacity:0; transform:translateY(20px); transition-delay: 0.2s;">
+          <div class="w-14 h-14 bg-brand-accent/10 rounded-2xl flex items-center justify-center text-brand-accent mb-6">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-laptop"><path d="M20 16V7a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v9m16 0H4m16 0 1.28 2.55a1 1 0 0 1-.9 1.45H3.62a1 1 0 0 1-.9-1.45L4 16"/></svg>
+          </div>
+          <h4 class="text-xl font-bold text-brand-navy mb-3">Tecnologia Aplicada</h4>
+          <p class="text-brand-navy/60 leading-relaxed text-sm">Uso de mapa geo-localizador, planilhas, inteligência artificial, Meta Ads e Google Ads.</p>
+        </div>
+
+        <!-- Diff 4 -->
+        <div class="p-8 rounded-[32px] bg-[#F9FAFB] border border-brand-neutral/10 hover:shadow-lg transition-all js-scroll-anim" style="opacity:0; transform:translateY(20px); transition-delay: 0.3s;">
+          <div class="w-14 h-14 bg-brand-accent/10 rounded-2xl flex items-center justify-center text-brand-accent mb-6">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-handshake"><path d="m11 17 2 2a1 1 0 1 0 3-3"/><path d="m14 14 2.5 2.5a1 1 0 1 0 3-3l-3.88-3.88a3 3 0 0 0-4.24 0l-.88.88a1 1 0 1 1-3-3l2.81-2.81a5.79 5.79 0 0 1 7.06-.87l.47.28a2 2 0 0 0 1.42.25L21 4"/><path d="m21 3-6 6"/><path d="m14 10-3 3"/><path d="m6 16-3 3"/><path d="m6 18 3 3"/><path d="m13 13-6 6a1 1 0 1 1-3-3l4-4a3 3 0 0 1 4.24 0z"/></svg>
+          </div>
+          <h4 class="text-xl font-bold text-brand-navy mb-3">Atendimento Presencial</h4>
+          <p class="text-brand-navy/60 leading-relaxed text-sm">Visitas regulares, apresentação de amostras e acompanhamento próximo de cada cliente.</p>
+        </div>
+
+        <!-- Diff 5 -->
+        <div class="p-8 rounded-[32px] bg-[#F9FAFB] border border-brand-neutral/10 hover:shadow-lg transition-all js-scroll-anim" style="opacity:0; transform:translateY(20px); transition-delay: 0.4s;">
+          <div class="w-14 h-14 bg-brand-accent/10 rounded-2xl flex items-center justify-center text-brand-accent mb-6">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-map-pin"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <h4 class="text-xl font-bold text-brand-navy mb-3">Cobertura de Região</h4>
+          <p class="text-brand-navy/60 leading-relaxed text-sm">Presença e planejamento de rotas e logística de atendimento.</p>
+        </div>
+
+        <!-- Diff 6 -->
+        <div class="p-8 rounded-[32px] bg-[#F9FAFB] border border-brand-neutral/10 hover:shadow-lg transition-all js-scroll-anim" style="opacity:0; transform:translateY(20px); transition-delay: 0.5s;">
+          <div class="w-14 h-14 bg-brand-accent/10 rounded-2xl flex items-center justify-center text-brand-accent mb-6">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-bar-chart-2"><line x1="18" x2="18" y1="20" y2="10"/><line x1="12" x2="12" y1="20" y2="4"/><line x1="6" x2="6" y1="20" y2="14"/></svg>
+          </div>
+          <h4 class="text-xl font-bold text-brand-navy mb-3">Atuação</h4>
+          <p class="text-brand-navy/60 leading-relaxed text-sm">Acompanhamento periódico de indicadores por marca e por canal de vendas.</p>
+        </div>
+      </div>
+    </div>
+    <div class="mr-section-divider"></div>
+  </section>
+
+  <!-- ============================================================
+       SEÇÃO 6 — METODOLOGIA DE TRABALHO
+       ============================================================ -->
+  <section class="py-32 bg-brand-navy text-white overflow-hidden relative">
+    <div class="absolute top-0 right-0 w-full h-full opacity-5 pointer-events-none">
+      <div class="text-[20vw] font-black absolute -bottom-20 -right-20 leading-none text-brand-accent">S.M.</div>
+    </div>
+    <div class="max-w-7xl mx-auto px-6 relative z-10">
+      <div class="text-center max-w-3xl mx-auto mb-20">
+        <span class="text-xs font-bold uppercase tracking-widest text-brand-accent mb-4 block">Como Trabalhamos</span>
+        <h2 class="text-5xl font-display font-black leading-tight">Da prospecção ao <span class="text-brand-accent">resultado</span></h2>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+        <div class="relative group flex flex-col">
+          <div class="text-7xl font-display font-black text-white/40 group-hover:text-brand-accent group-hover:opacity-80 transition-colors leading-none mb-4">01</div>
+          <div class="relative z-10">
+            <h4 class="text-xl font-bold mb-4 flex items-center gap-3"><span class="w-8 h-[2px] bg-brand-accent"></span>Conhecimento do produto</h4>
+            <p class="text-white/60 leading-relaxed text-sm">Estudo da marca, portfólio, posicionamento e condições comerciais antes de qualquer contato com o mercado.</p>
+          </div>
+        </div>
+        <div class="relative group flex flex-col">
+          <div class="text-7xl font-display font-black text-white/40 group-hover:text-brand-accent group-hover:opacity-80 transition-colors leading-none mb-4">02</div>
+          <div class="relative z-10">
+            <h4 class="text-xl font-bold mb-4 flex items-center gap-3"><span class="w-8 h-[2px] bg-brand-accent"></span>Mapeamento de canais</h4>
+            <p class="text-white/60 leading-relaxed text-sm">Identificação dos clientes ideais por segmento, região e perfil de compra.</p>
+          </div>
+        </div>
+        <div class="relative group flex flex-col">
+          <div class="text-7xl font-display font-black text-white/40 group-hover:text-brand-accent group-hover:opacity-80 transition-colors leading-none mb-4">03</div>
+          <div class="relative z-10">
+            <h4 class="text-xl font-bold mb-4 flex items-center gap-3"><span class="w-8 h-[2px] bg-brand-accent"></span>Execução em campo</h4>
+            <p class="text-white/60 leading-relaxed text-sm">Visitas presenciais, entrega de amostras, negociação e fechamento com acompanhamento ativo.</p>
+          </div>
+        </div>
+        <div class="relative group flex flex-col">
+          <div class="text-7xl font-display font-black text-white/40 group-hover:text-brand-accent group-hover:opacity-80 transition-colors leading-none mb-4">04</div>
+          <div class="relative z-10">
+            <h4 class="text-xl font-bold mb-4 flex items-center gap-3"><span class="w-8 h-[2px] bg-brand-accent"></span>Monitoramento</h4>
+            <p class="text-white/60 leading-relaxed text-sm">Acompanhamento de pedidos, relacionamento pós-venda e expansão da carteira.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="mr-section-divider"></div>
+  </section>
+
+  
+  
+  <!-- ============================================================
+       SEÇÃO 7.5 — CONSULTORIA ESTRATÉGICA
+       ============================================================ -->
+  <!-- SEÇÃO 7 — CONSULTORIA ESTRATÉGICA (REDESIGN) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,700;0,9..144,900;1,9..144,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+  .sec7 {
+    --navy: #0D1F30;
+    --petroleum: #19546B;
+    --accent: #19546B;
+    --accent-light: rgba(25, 84, 107, 0.1);
+    --light: #F9FAFB;
+    --white: #ffffff;
+    --text-muted: #706F6F;
+    --card-border: #E5E7EB;
+  }
+
+  .sec7 * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  .sec7 {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--light);
+    padding: 120px 0 140px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* ── fundo decorativo ── */
+  .sec7-bg {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+  }
+  .sec7-bg-circle {
+    position: absolute;
+    border-radius: 50%;
+    border: 1px solid var(--accent);
+    opacity: 0.12;
+    animation: rotateSlow 40s linear infinite;
+  }
+  .sec7-bg-circle:nth-child(1) { width: 700px; height: 700px; top: -200px; right: -180px; }
+  .sec7-bg-circle:nth-child(2) { width: 400px; height: 400px; top: -80px; right: 80px; animation-direction: reverse; }
+  .sec7-bg-circle:nth-child(3) { width: 280px; height: 280px; bottom: 60px; left: -60px; animation-duration: 28s; }
+
+  .sec7-bg-dot-grid {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(circle, rgba(13,31,48,0.06) 1.2px, transparent 1.2px);
+    background-size: 32px 32px;
+  }
+
+  .sec7-bg-bar {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 6px;
+    width: 100%;
+    background: linear-gradient(90deg, var(--navy) 0%, var(--petroleum) 50%, var(--navy) 100%);
+    opacity: 0.15;
+  }
+
+  @keyframes rotateSlow {
+    to { transform: rotate(360deg); }
+  }
+
+  /* ── container ── */
+  .sec7-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+    position: relative;
+    z-index: 2;
+  }
+
+  /* ── label ── */
+  .sec7-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--navy);
+    color: var(--white);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    padding: 8px 18px;
+    border-radius: 100px;
+    margin-bottom: 28px;
+    opacity: 0;
+    transform: translateY(14px);
+    animation: fadeUp 0.7s 0.1s forwards;
+  }
+  .sec7-label span {
+    display: inline-block;
+    width: 5px; height: 5px;
+    border-radius: 50%;
+    background: var(--accent);
+  }
+
+  /* ── heading ── */
+  .sec7-heading-wrap {
+    text-align: center;
+    margin-bottom: 72px;
+    opacity: 0;
+    transform: translateY(18px);
+    animation: fadeUp 0.7s 0.25s forwards;
+  }
+  .sec7-heading {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(40px, 5.5vw, 68px);
+    font-weight: 900;
+    color: var(--navy);
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    margin-bottom: 20px;
+  }
+  .sec7-heading em {
+    font-style: italic;
+    font-weight: 300;
+    color: var(--petroleum);
+  }
+  .sec7-heading-sub {
+    font-size: 16px;
+    color: var(--text-muted);
+    max-width: 560px;
+    margin: 0 auto;
+    line-height: 1.75;
+  }
+
+  /* ── main grid ── */
+  .sec7-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+    align-items: start;
+  }
+
+  @media (max-width: 900px) {
+    .sec7-grid { grid-template-columns: 1fr; gap: 48px; }
+    .sec7-heading { font-size: 36px; }
+    .sec7-inner { padding: 0 24px; }
+  }
+
+  /* ── left col ── */
+  .sec7-left {
+    opacity: 0;
+    transform: translateX(-24px);
+    animation: fadeRight 0.8s 0.4s forwards;
+  }
+
+  .sec7-intro {
+    font-size: 16px;
+    color: var(--text-muted);
+    line-height: 1.85;
+    margin-bottom: 36px;
+  }
+
+  /* checklist */
+  .sec7-list {
+    list-style: none;
+    margin-bottom: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+  .sec7-list li {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 14px 0;
+    border-bottom: 1px solid var(--card-border);
+    font-size: 15px;
+    color: var(--navy);
+    font-weight: 500;
+    opacity: 0;
+    transform: translateX(-12px);
+    transition: background 0.2s;
+  }
+  .sec7-list li:first-child { border-top: 1px solid var(--card-border); }
+  .sec7-list li.visible { animation: fadeRight 0.5s forwards; }
+  .sec7-list li:nth-child(1) { animation-delay: 0.55s; }
+  .sec7-list li:nth-child(2) { animation-delay: 0.68s; }
+  .sec7-list li:nth-child(3) { animation-delay: 0.81s; }
+  .sec7-list li:nth-child(4) { animation-delay: 0.94s; }
+
+  .sec7-list-icon {
+    width: 28px; height: 28px;
+    border-radius: 50%;
+    background: var(--accent);
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .sec7-list-icon svg {
+    width: 13px; height: 13px;
+    stroke: var(--white);
+    fill: none;
+    stroke-width: 2.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  /* quote */
+  .sec7-quote {
+    position: relative;
+    background: var(--white);
+    color: var(--text-muted);
+    border: 1px solid var(--card-border);
+    font-family: 'Fraunces', serif;
+    font-size: 17px;
+    font-style: italic;
+    font-weight: 300;
+    line-height: 1.65;
+    padding: 28px 32px 28px 52px;
+    border-radius: 16px;
+    margin-bottom: 40px;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(12px);
+    animation: fadeUp 0.7s 1.05s forwards;
+  }
+  .sec7-quote::before {
+    content: '"';
+    position: absolute;
+    left: 16px;
+    top: 10px;
+    font-size: 72px;
+    font-family: 'Fraunces', serif;
+    color: var(--accent-light);
+    line-height: 1;
+    opacity: 0.6;
+  }
+  .sec7-quote-bar {
+    position: absolute;
+    top: 0; left: 0; bottom: 0;
+    width: 4px;
+    background: var(--accent);
+  }
+
+  /* CTA */
+  .sec7-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background: var(--navy);
+    color: var(--white);
+    padding: 16px 32px;
+    border-radius: 100px;
+    font-weight: 700;
+    font-size: 15px;
+    text-decoration: none;
+    letter-spacing: 0.01em;
+    box-shadow: 0 8px 28px rgba(13,31,48,0.25);
+    transition: transform 0.25s, box-shadow 0.25s, background 0.25s;
+    opacity: 0;
+    animation: fadeUp 0.6s 1.2s forwards;
+  }
+  .sec7-cta:hover {
+    transform: translateY(-3px);
+    background: var(--petroleum);
+    box-shadow: 0 14px 36px rgba(13,31,48,0.35);
+  }
+  .sec7-cta svg {
+    width: 18px; height: 18px;
+    stroke: currentColor; fill: none;
+    stroke-width: 2.2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    transition: transform 0.25s;
+  }
+  .sec7-cta:hover svg { transform: translateX(4px); }
+
+  /* ── right col ── */
+  .sec7-right {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    opacity: 0;
+    transform: translateX(24px);
+    animation: fadeLeft 0.8s 0.45s forwards;
+  }
+
+  /* metric strip */
+  .sec7-metrics {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 8px;
+  }
+  .sec7-metric {
+    background: var(--navy);
+    border-radius: 14px;
+    padding: 18px 16px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .sec7-metric::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 3px;
+    background: var(--accent);
+    opacity: 0.5;
+  }
+  .sec7-metric-num {
+    font-family: 'Fraunces', serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--petroleum);
+    line-height: 1;
+    margin-bottom: 4px;
+    counter-reset: none;
+  }
+  .sec7-metric-label {
+    font-size: 11px;
+    color: rgba(255,255,255,0.45);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    font-weight: 500;
+  }
+
+  /* cards */
+  .sec7-cards-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+  }
+  .sec7-card {
+    background: var(--white);
+    border: 1px solid var(--card-border);
+    border-radius: 18px;
+    padding: 24px 22px;
+    position: relative;
+    overflow: hidden;
+    cursor: default;
+    transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+  }
+  .sec7-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 48px rgba(13,31,48,0.08);
+    border-color: rgba(25, 84, 107, 0.3);
+  }
+  .sec7-card:hover .sec7-card-icon {
+    background: var(--navy);
+  }
+  .sec7-card:hover .sec7-card-icon svg {
+    stroke: var(--white);
+  }
+  .sec7-card-line {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 3px;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s ease;
+  }
+  .sec7-card:hover .sec7-card-line { transform: scaleX(1); }
+
+  .sec7-card:nth-child(1) .sec7-card-line { background: var(--petroleum); }
+  .sec7-card:nth-child(2) .sec7-card-line { background: var(--navy); }
+  .sec7-card:nth-child(3) .sec7-card-line { background: var(--navy); }
+  .sec7-card:nth-child(4) .sec7-card-line { background: var(--petroleum); }
+
+  .sec7-card-icon {
+    width: 40px; height: 40px;
+    border-radius: 12px;
+    background: var(--light);
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 14px;
+    transition: background 0.3s;
+  }
+  .sec7-card-icon svg {
+    width: 19px; height: 19px;
+    stroke: var(--petroleum);
+    fill: none;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    transition: stroke 0.3s;
+  }
+  .sec7-card h4 {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 6px;
+    letter-spacing: 0.01em;
+  }
+  .sec7-card p {
+    font-size: 13px;
+    color: var(--text-muted);
+    line-height: 1.6;
+  }
+
+  /* progress bars */
+  .sec7-bars {
+    background: var(--white);
+    border: 1px solid var(--card-border);
+    border-radius: 18px;
+    padding: 22px 24px;
+  }
+  .sec7-bars-title {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    margin-bottom: 18px;
+  }
+  .sec7-bar-item { margin-bottom: 14px; }
+  .sec7-bar-item:last-child { margin-bottom: 0; }
+  .sec7-bar-header {
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+    margin-bottom: 6px;
+  }
+  .sec7-bar-header span:first-child { color: var(--navy); font-weight: 500; }
+  .sec7-bar-header span:last-child { color: var(--accent); font-weight: 700; }
+  .sec7-bar-track {
+    height: 6px;
+    background: var(--light);
+    border-radius: 100px;
+    overflow: hidden;
+  }
+  .sec7-bar-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--petroleum), var(--navy));
+    border-radius: 100px;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 1.2s cubic-bezier(0.22,1,0.36,1);
+  }
+  .sec7-bar-fill.animated { transform: scaleX(1); }
+
+  /* ── keyframes ── */
+  @keyframes fadeUp {
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes fadeRight {
+    to { opacity: 1; transform: translateX(0); }
+  }
+  @keyframes fadeLeft {
+    to { opacity: 1; transform: translateX(0); }
+  }
+
+  /* counter animation */
+  .count-up { display: inline-block; }
+
+  /* floating badge */
+  .sec7-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: #F3F4F6;
+    border: 1px solid #E5E7EB;
+    color: var(--navy);
+    font-size: 12px;
+    font-weight: 600;
+    padding: 5px 12px;
+    border-radius: 100px;
+    margin-left: 12px;
+    vertical-align: middle;
+  }
+  .sec7-badge-dot {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--accent);
+    animation: pulse 1.8s ease-in-out infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.4); opacity: 0.6; }
+  }
+</style>
+
+<section class="sec7">
+
+  <!-- fundo decorativo -->
+  <div class="sec7-bg">
+    <div class="sec7-bg-dot-grid"></div>
+    <div class="sec7-bg-circle"></div>
+    <div class="sec7-bg-circle"></div>
+    <div class="sec7-bg-circle"></div>
+    <div class="sec7-bg-bar"></div>
+  </div>
+
+  <div class="sec7-inner">
+
+    <!-- label -->
+    <div style="text-align:center;">
+      <div class="sec7-label">
+        <span></span>
+        Consultoria Estratégica para sua Empresa
+        <span></span>
+      </div>
+    </div>
+
+    <!-- heading -->
+    <div class="sec7-heading-wrap">
+      <h2 class="sec7-heading">
+        Consultoria com análise<br>
+        <em>da sua Empresa</em>
+        <span class="sec7-badge">
+          <span class="sec7-badge-dot"></span>
+          Disponível agora
+        </span>
+      </h2>
+      <p class="sec7-heading-sub">
+        Análise de forma prática e visual de como sua empresa está posicionada no mercado, identificando falhas, oportunidades e pontos de crescimento na operação comercial.
+      </p>
+    </div>
+
+    <!-- grid principal -->
+    <div class="sec7-grid">
+
+      <!-- esquerda -->
+      <div class="sec7-left">
+
+        <p class="sec7-intro">
+          Muitas empresas não crescem porque não enxergam com clareza o que está acontecendo no mercado. Com base na minha experiência em campo, faço uma leitura direta da sua operação em São Paulo — avaliando presença, atuação comercial e desempenho real dos representantes.
+        </p>
+
+        <ul class="sec7-list" id="sec7list">
+          <li>
+            <span class="sec7-list-icon">
+              <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+            </span>
+            Posicionamento da marca nos canais certos
+          </li>
+          <li>
+            <span class="sec7-list-icon">
+              <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+            </span>
+            Atuação e performance dos representantes
+          </li>
+          <li>
+            <span class="sec7-list-icon">
+              <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+            </span>
+            Cobertura regional e presença de mercado
+          </li>
+          <li>
+            <span class="sec7-list-icon">
+              <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+            </span>
+            Oportunidades reais de expansão
+          </li>
+        </ul>
+
+        <div class="sec7-quote">
+          <div class="sec7-quote-bar"></div>
+          Quem está dentro da operação nem sempre consegue enxergar onde está perdendo mercado.
+        </div>
+
+        <a href="#contato" class="sec7-cta">
+          Solicitar Diagnóstico
+          <svg viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </a>
+
+      </div>
+
+      <!-- direita -->
+      <div class="sec7-right">
+
+        <!-- métricas -->
+        <div class="sec7-metrics">
+          <div class="sec7-metric">
+            <div class="sec7-metric-num"><span class="count-up" data-target="12">0</span>+</div>
+            <div class="sec7-metric-label">Anos em campo</div>
+          </div>
+          <div class="sec7-metric">
+            <div class="sec7-metric-num"><span class="count-up" data-target="200">0</span>+</div>
+            <div class="sec7-metric-label">Diagnósticos</div>
+          </div>
+          <div class="sec7-metric">
+            <div class="sec7-metric-num"><span class="count-up" data-target="94">0</span>%</div>
+            <div class="sec7-metric-label">Satisfação</div>
+          </div>
+        </div>
+
+        <!-- 4 cards -->
+        <div class="sec7-cards-grid">
+          <div class="sec7-card">
+            <div class="sec7-card-icon">
+              <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.22 4.22l2.12 2.12M17.66 17.66l2.12 2.12M2 12h3M19 12h3M4.22 19.78l2.12-2.12M17.66 6.34l2.12-2.12"/></svg>
+            </div>
+            <h4>Posicionamento</h4>
+            <p>Como sua marca está sendo percebida no mercado.</p>
+            <div class="sec7-card-line"></div>
+          </div>
+          <div class="sec7-card">
+            <div class="sec7-card-icon">
+              <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            <h4>Representantes</h4>
+            <p>Análise da atuação e alinhamento da equipe comercial.</p>
+            <div class="sec7-card-line"></div>
+          </div>
+          <div class="sec7-card">
+            <div class="sec7-card-icon">
+              <svg viewBox="0 0 24 24"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg>
+            </div>
+            <h4>Cobertura</h4>
+            <p>Regiões atendidas e oportunidades não exploradas.</p>
+            <div class="sec7-card-line"></div>
+          </div>
+          <div class="sec7-card">
+            <div class="sec7-card-icon">
+              <svg viewBox="0 0 24 24"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+            </div>
+            <h4>Expansão</h4>
+            <p>Caminhos práticos para crescimento estruturado.</p>
+            <div class="sec7-card-line"></div>
+          </div>
+        </div>
+
+        <!-- barras de diagnóstico -->
+        <div class="sec7-bars">
+          <div class="sec7-bars-title">Áreas avaliadas no diagnóstico</div>
+          <div class="sec7-bar-item">
+            <div class="sec7-bar-header"><span>Presença de mercado</span><span>87%</span></div>
+            <div class="sec7-bar-track"><div class="sec7-bar-fill" style="width:87%"></div></div>
+          </div>
+          <div class="sec7-bar-item">
+            <div class="sec7-bar-header"><span>Performance comercial</span><span>72%</span></div>
+            <div class="sec7-bar-track"><div class="sec7-bar-fill" style="width:72%"></div></div>
+          </div>
+          <div class="sec7-bar-item">
+            <div class="sec7-bar-header"><span>Cobertura regional</span><span>61%</span></div>
+            <div class="sec7-bar-track"><div class="sec7-bar-fill" style="width:61%"></div></div>
+          </div>
+          <div class="sec7-bar-item">
+            <div class="sec7-bar-header"><span>Potencial de expansão</span><span>94%</span></div>
+            <div class="sec7-bar-track"><div class="sec7-bar-fill" style="width:94%"></div></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+(function(){
+  // animate list items via IntersectionObserver
+  const listItems = document.querySelectorAll('#sec7list li');
+  listItems.forEach(li => li.classList.add('visible'));
+
+  // counter animation
+  function animateCounter(el) {
+    const target = parseInt(el.dataset.target, 10);
+    const duration = 1600;
+    const start = performance.now();
+    function tick(now) {
+      const elapsed = now - start;
+      const progress = Math.min(elapsed / duration, 1);
+      const ease = 1 - Math.pow(1 - progress, 4);
+      el.textContent = Math.round(ease * target);
+      if (progress < 1) requestAnimationFrame(tick);
+      else el.textContent = target;
+    }
+    requestAnimationFrame(tick);
+  }
+
+  // bar animation
+  function animateBars() {
+    document.querySelectorAll('.sec7-bar-fill').forEach(function(bar){
+      bar.classList.add('animated');
+    });
+  }
+
+  // IntersectionObserver trigger
+  const section = document.querySelector('.sec7');
+  let triggered = false;
+  const obs = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if (entry.isIntersecting && !triggered) {
+        triggered = true;
+        document.querySelectorAll('.count-up').forEach(animateCounter);
+        setTimeout(animateBars, 500);
+        obs.disconnect();
+      }
+    });
+  }, { threshold: 0.15 });
+  obs.observe(section);
+})();
+</script>
+
+  <!-- ============================================================
+       SEÇÃO 8 — CLIENTES ATENDIDOS
+       ============================================================ -->
+  <section class="py-32 bg-white overflow-hidden">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-20">
+        <span class="text-xs font-bold uppercase tracking-[0.3em] text-brand-accent mb-4 block">Nossos Clientes</span>
+        <h2 class="text-5xl font-display font-black text-brand-navy leading-tight">Empresas que confiam na <br>
+  <b><span class="text-brand-accent">S. Macedo Representações</span></b>
+</h2>
+        <p class="text-brand-navy/50 mt-4">Parceiros consolidados em diferentes segmentos lojistas, varejo, distribuidores.</p>
+      </div>
+    </div>
+    <div class="flex whitespace-nowrap overflow-hidden">
+      <div class="flex mr-home-animate-marquee gap-8 py-4">
+        <div class="mr-home-cliente-logo w-64 h-32 rounded-[24px] overflow-hidden shadow-sm transition-all duration-500 group shrink-0 hover:shadow-xl border border-brand-neutral/10 bg-white p-6 flex items-center justify-center">
+          <img src="/imagenspadrao/cliente-rebal.jpg" alt="Cliente Rebal" class="max-w-full max-h-full object-contain opacity-70 group-hover:opacity-100 transition-opacity duration-500" loading="lazy" decoding="async" width="200" height="100"/>
+        </div>
+        <div class="mr-home-cliente-logo w-64 h-32 rounded-[24px] overflow-hidden shadow-sm transition-all duration-500 group shrink-0 hover:shadow-xl border border-brand-neutral/10 bg-white p-6 flex items-center justify-center">
+          <img src="/imagenspadrao/cliente-maquinbal.jpg" alt="Cliente Maquinbal" class="max-w-full max-h-full object-contain opacity-70 group-hover:opacity-100 transition-opacity duration-500" loading="lazy" decoding="async" width="200" height="100"/>
+        </div>
+        <div class="mr-home-cliente-logo w-64 h-32 rounded-[24px] overflow-hidden shadow-sm transition-all duration-500 group shrink-0 hover:shadow-xl border border-brand-neutral/10 bg-white p-6 flex items-center justify-center">
+          <img src="/imagenspadrao/cliente-upcasa.jpg" alt="Cliente UpCasa" class="max-w-full max-h-full object-contain opacity-70 group-hover:opacity-100 transition-opacity duration-500" loading="lazy" decoding="async" width="200" height="100"/>
+        </div>
+        <div class="mr-home-cliente-logo w-64 h-32 rounded-[24px] overflow-hidden shadow-sm transition-all duration-500 group shrink-0 hover:shadow-xl border border-brand-neutral/10 bg-white p-6 flex items-center justify-center">
+          <img src="/imagenspadrao/cliente-utiliplast.jpg" alt="Cliente Utiliplast" class="max-w-full max-h-full object-contain opacity-70 group-hover:opacity-100 transition-opacity duration-500" loading="lazy" decoding="async" width="200" height="100"/>
+        </div>
+        <div class="mr-home-cliente-logo w-64 h-32 rounded-[24px] overflow-hidden shadow-sm transition-all duration-500 group shrink-0 hover:shadow-xl border border-brand-neutral/10 bg-white p-6 flex items-center justify-center">
+          <img src="/imagenspadrao/cliente-kofisa.jpg" alt="Cliente Kofisa" class="max-w-full max-h-full object-contain opacity-70 group-hover:opacity-100 transition-opacity duration-500" loading="lazy" decoding="async" width="200" height="100"/>
+        </div>
+        <div class="mr-home-cliente-logo w-64 h-32 rounded-[24px] overflow-hidden shadow-sm transition-all duration-500 group shrink-0 hover:shadow-xl border border-brand-neutral/10 bg-white p-6 flex items-center justify-center">
+          <img src="/imagenspadrao/cliente-pracasanet.jpg" alt="Cliente PraCasaNet" class="max-w-full max-h-full object-contain opacity-70 group-hover:opacity-100 transition-opacity duration-500" loading="lazy" decoding="async" width="200" height="100"/>
+        </div>
+        
+        <!-- Duplicates for marquee -->
+        <div class="mr-home-cliente-logo w-64 h-32 rounded-[24px] overflow-hidden shadow-sm transition-all duration-500 group shrink-0 hover:shadow-xl border border-brand-neutral/10 bg-white p-6 flex items-center justify-center">
+          <img src="/imagenspadrao/cliente-rebal.jpg" alt="Cliente Rebal" class="max-w-full max-h-full object-contain opacity-70 group-hover:opacity-100 transition-opacity duration-500" loading="lazy" decoding="async" width="200" height="100"/>
+        </div>
+        <div class="mr-home-cliente-logo w-64 h-32 rounded-[24px] overflow-hidden shadow-sm transition-all duration-500 group shrink-0 hover:shadow-xl border border-brand-neutral/10 bg-white p-6 flex items-center justify-center">
+          <img src="/imagenspadrao/cliente-maquinbal.jpg" alt="Cliente Maquinbal" class="max-w-full max-h-full object-contain opacity-70 group-hover:opacity-100 transition-opacity duration-500" loading="lazy" decoding="async" width="200" height="100"/>
+        </div>
+        <div class="mr-home-cliente-logo w-64 h-32 rounded-[24px] overflow-hidden shadow-sm transition-all duration-500 group shrink-0 hover:shadow-xl border border-brand-neutral/10 bg-white p-6 flex items-center justify-center">
+          <img src="/imagenspadrao/cliente-upcasa.jpg" alt="Cliente UpCasa" class="max-w-full max-h-full object-contain opacity-70 group-hover:opacity-100 transition-opacity duration-500" loading="lazy" decoding="async" width="200" height="100"/>
+        </div>
+        <div class="mr-home-cliente-logo w-64 h-32 rounded-[24px] overflow-hidden shadow-sm transition-all duration-500 group shrink-0 hover:shadow-xl border border-brand-neutral/10 bg-white p-6 flex items-center justify-center">
+          <img src="/imagenspadrao/cliente-utiliplast.jpg" alt="Cliente Utiliplast" class="max-w-full max-h-full object-contain opacity-70 group-hover:opacity-100 transition-opacity duration-500" loading="lazy" decoding="async" width="200" height="100"/>
+        </div>
+        <div class="mr-home-cliente-logo w-64 h-32 rounded-[24px] overflow-hidden shadow-sm transition-all duration-500 group shrink-0 hover:shadow-xl border border-brand-neutral/10 bg-white p-6 flex items-center justify-center">
+          <img src="/imagenspadrao/cliente-kofisa.jpg" alt="Cliente Kofisa" class="max-w-full max-h-full object-contain opacity-70 group-hover:opacity-100 transition-opacity duration-500" loading="lazy" decoding="async" width="200" height="100"/>
+        </div>
+        <div class="mr-home-cliente-logo w-64 h-32 rounded-[24px] overflow-hidden shadow-sm transition-all duration-500 group shrink-0 hover:shadow-xl border border-brand-neutral/10 bg-white p-6 flex items-center justify-center">
+          <img src="/imagenspadrao/cliente-pracasanet.jpg" alt="Cliente PraCasaNet" class="max-w-full max-h-full object-contain opacity-70 group-hover:opacity-100 transition-opacity duration-500" loading="lazy" decoding="async" width="200" height="100"/>
+        </div>
+      </div>
+    </div>
+    <div class="mr-section-divider"></div>
+  </section>
+
+  <!-- ============================================================
+       SEÇÃO 9 — CTA DE CONVERSÃO
+       ============================================================ -->
+  <section class="py-32 relative bg-brand-navy overflow-hidden">
+    <!-- Imagem de fundo sutil -->
+    <div class="absolute inset-0 z-0 overflow-hidden">
+      <img src="/imagenspadrao/inspiracao-fundo.jpg" alt="Fundo CTA S. Macedo" class="absolute inset-0 w-full h-full object-cover opacity-10" style="mix-blend-mode: multiply;" loading="lazy" decoding="async"/>
+      <div class="absolute inset-0 bg-gradient-to-t from-brand-navy to-transparent"></div>
+    </div>
+    
+    <div class="max-w-4xl mx-auto px-6 relative z-10 text-center">
+      <h2 class="text-4xl md:text-5xl lg:text-6xl font-display font-black text-white leading-tight mb-6">Sua empresa precisa de representação comercial em <span class="text-brand-accent">São Paulo</span>?</h2>
+      <p class="text-lg text-white/80 leading-relaxed mb-10 max-w-2xl mx-auto">Atendemos todo o Estado com estrutura, experiência e comprometimento. Conheça nosso trabalho, entre em contato diretamente e agendamos uma reunião.</p>
+      
+      <div class="flex flex-col sm:flex-row justify-center gap-4">
+        <a href="#portfolio" class="bg-brand-accent text-white px-8 py-5 rounded-2xl font-black text-[13px] justify-center uppercase tracking-widest hover:bg-white hover:text-brand-navy transition-all shadow-xl flex items-center gap-3">
+          Ver Empresas Representadas
+        </a>
+        <a href="#contato" class="bg-white/10 backdrop-blur-xl border border-white/20 text-white px-8 py-5 rounded-2xl font-black text-[13px] justify-center uppercase tracking-widest hover:bg-white/20 transition-all flex items-center gap-3 shadow-xl">
+          Entrar em Contato
+        </a>
+      </div>
+    </div>
+    <div class="mr-section-divider"></div>
+  </section>
+
+  <!-- ============================================================
+       SEÇÃO 10 — INSTAGRAM
+       ============================================================ -->
+    <style>
+      .instagram-section-wrapper {
+        --primary: #0D1F30; /* Updated to match theme var(--brand-navy) */
+        --primary-light: #19546B; /* var(--brand-petroleum) */
+        --accent: #19546B;
+        --text: #0D1F30;
+        --gray: #f4f7fa;
+        --white: #ffffff;
+      }
+
+      /* =========================
+         INSTAGRAM SECTION
+      ========================= */
+
+      .instagram-section {
+        position: relative;
+        overflow: hidden;
+        padding: 120px 7%;
+        background:
+          radial-gradient(
+            circle at top left,
+            rgba(25, 84, 107, 0.1),
+            transparent 35%
+          ),
+          radial-gradient(
+            circle at bottom right,
+            rgba(13, 31, 48, 0.08),
+            transparent 35%
+          ),
+          #f7fafc;
+      }
+
+      .instagram-wrapper {
+        max-width: 1400px;
+        margin: auto;
+        display: grid;
+        grid-template-columns: 1.1fr 0.9fr;
+        gap: 70px;
+        align-items: center;
+      }
+
+      /* LEFT */
+
+      .instagram-content small {
+        display: inline-block;
+        margin-bottom: 18px;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: var(--accent);
+        font-weight: 700;
+      }
+
+      .instagram-content h2 {
+        font-size: clamp(2.5rem, 4vw, 4.4rem);
+        line-height: 1.05;
+        color: var(--primary);
+        font-weight: 800;
+        margin-bottom: 28px;
+        max-width: 700px;
+        font-family: 'Space Grotesk', sans-serif;
+      }
+
+      .instagram-content h2 span {
+        color: var(--accent);
+      }
+
+      .instagram-content p {
+        font-size: 1.1rem;
+        line-height: 1.9;
+        max-width: 650px;
+        color: #556270;
+        margin-bottom: 35px;
+      }
+
+      /* SEO CARD */
+
+      .seo-card {
+        display: flex;
+        gap: 22px;
+        align-items: center;
+        background: rgba(255, 255, 255, 0.92);
+        backdrop-filter: blur(10px);
+        border-radius: 28px;
+        padding: 22px;
+        margin-bottom: 35px;
+        border: 1px solid rgba(0, 0, 0, 0.04);
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.06);
+      }
+
+      .seo-card img {
+        width: 180px;
+        height: 140px;
+        object-fit: cover;
+        border-radius: 18px;
+      }
+
+      .seo-text h3 {
+        font-size: 1.35rem;
+        color: var(--primary);
+        margin-bottom: 12px;
+      }
+
+      .seo-text p {
+        font-size: 0.96rem;
+        line-height: 1.7;
+        margin: 0;
+      }
+
+      /* BUTTONS */
+
+      .instagram-buttons {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 18px;
+      }
+
+      .instagram-buttons .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        padding: 16px 28px;
+        border-radius: 16px;
+        font-weight: 700;
+        text-decoration: none;
+        transition: 0.3s ease;
+      }
+
+      .instagram-buttons .btn-primary {
+        background: linear-gradient(
+          135deg,
+          var(--accent),
+          var(--primary-light)
+        );
+        color: #fff;
+        box-shadow: 0 12px 30px rgba(10, 65, 120, 0.2);
+      }
+
+      .instagram-buttons .btn-primary:hover {
+        transform: translateY(-4px);
+      }
+
+      .instagram-buttons .btn-secondary {
+        background: #fff;
+        color: var(--primary);
+        border: 1px solid rgba(0, 0, 0, 0.08);
+      }
+
+      .instagram-buttons .btn-secondary:hover {
+        background: var(--primary);
+        color: #fff;
+      }
+
+      /* RIGHT SIDE */
+
+      .instagram-visual {
+        position: relative;
+      }
+
+      .instagram-glow {
+        position: absolute;
+        width: 420px;
+        height: 420px;
+        background: linear-gradient(135deg, var(--accent), var(--primary));
+        opacity: 0.14;
+        filter: blur(60px);
+        border-radius: 50%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      .phone-card {
+        position: relative;
+        z-index: 2;
+        width: 100%;
+        max-width: 430px;
+        margin: auto;
+        background: #fff;
+        border-radius: 40px;
+        padding: 22px;
+        box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
+        border: 1px solid rgba(0, 0, 0, 0.05);
+        will-change: transform;
+      }
+
+      /* HEADER */
+
+      .phone-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 18px;
+      }
+
+      .profile {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+
+      .profile img {
+        width: 52px;
+        height: 52px;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+
+      .profile h4 {
+        font-size: 1rem;
+        color: var(--primary);
+      }
+
+      .profile span {
+        font-size: 0.85rem;
+        color: #7a8795;
+      }
+
+      /* PREVIEW */
+
+      .insta-preview {
+        border-radius: 26px;
+        overflow: hidden;
+        position: relative;
+      }
+
+      .insta-preview img {
+        width: 100%;
+        display: block;
+        object-fit: cover;
+      }
+
+      .overlay {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          to top,
+          rgba(0, 0, 0, 0.55),
+          transparent 50%
+        );
+      }
+
+      .overlay-content {
+        position: absolute;
+        bottom: 22px;
+        left: 22px;
+        right: 22px;
+        color: #fff;
+      }
+
+      .overlay-content h3 {
+        font-size: 1.5rem;
+        margin-bottom: 8px;
+      }
+
+      .overlay-content p {
+        font-size: 0.95rem;
+        line-height: 1.6;
+        opacity: 0.92;
+      }
+
+      /* STATS */
+
+      .stats {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 18px;
+        padding-top: 18px;
+        border-top: 1px solid rgba(0, 0, 0, 0.08);
+      }
+
+      .stats div {
+        text-align: center;
+      }
+
+      .stats strong {
+        display: block;
+        color: var(--primary);
+        font-size: 1.1rem;
+      }
+
+      .stats span {
+        font-size: 0.8rem;
+        color: #7b8794;
+      }
+
+      /* FLOAT CARD */
+
+      .float-card {
+        position: absolute;
+        left: -40px;
+        bottom: 40px;
+        background: #fff;
+        padding: 18px 20px;
+        border-radius: 22px;
+        box-shadow: 0 20px 45px rgba(0, 0, 0, 0.1);
+        z-index: 3;
+        animation: floatInsta 4s ease-in-out infinite;
+      }
+
+      .float-card strong {
+        display: block;
+        color: var(--primary);
+        margin-bottom: 4px;
+      }
+
+      .float-card span {
+        font-size: 0.9rem;
+        color: #667585;
+      }
+
+      @keyframes floatInsta {
+        0% { transform: translateY(0px); }
+        50% { transform: translateY(-10px); }
+        100% { transform: translateY(0px); }
+      }
+
+      /* MOBILE */
+
+      @media (max-width: 980px) {
+        .instagram-wrapper {
+          grid-template-columns: 1fr;
+        }
+        .instagram-content {
+          order: 2;
+        }
+        .instagram-visual {
+          order: 1;
+        }
+        .instagram-section {
+          padding: 90px 6%;
+        }
+        .float-card {
+          left: 10px;
+          bottom: -20px;
+        }
+        .seo-card {
+          flex-direction: column;
+          text-align: center;
+        }
+        .seo-card img {
+          width: 100%;
+          height: 220px;
+        }
+      }
+    </style>
+    <section class="instagram-section instagram-section-wrapper">
+      <div class="instagram-wrapper">
+        <!-- LEFT -->
+        <div class="instagram-content">
+          <small>Instagram & Presença Digital</small>
+
+          <h2>
+            Acompanhe nossa atuação comercial e fortaleça sua
+            <span>marca no mercado</span>
+          </h2>
+
+          <p>
+            Compartilhamos oportunidades, marcas representadas, estratégias
+            comerciais, prospecção B2B e novidades do setor. Nosso Instagram
+            aproxima empresas, distribuidores e lojistas que buscam
+            representação comercial em São Paulo.
+          </p>
+
+          <!-- SEO / CTA CARD -->
+          <div class="seo-card">
+            <img
+              src="https://images.unsplash.com/photo-1556740749-887f6717d7e4?q=80&w=1200&auto=format&fit=crop"
+              alt="Representação comercial em São Paulo"
+            />
+
+            <div class="seo-text">
+              <h3>Impulsione sua empresa</h3>
+
+              <p>
+                Buscando representação comercial para ampliar vendas, conquistar
+                distribuidores e aumentar presença no varejo? Conheça nossa
+                atuação em São Paulo e fortaleça sua marca.
+              </p>
+            </div>
+          </div>
+
+          <div class="instagram-buttons">
+            <a
+              href="https://instagram.com/macedorepresentacoes_01"
+              target="_blank"
+              class="btn btn-primary"
+            >
+              Seguir no Instagram
+            </a>
+
+            <a href="#contato" class="btn btn-secondary"> Solicitar Contato </a>
+          </div>
+        </div>
+
+        <!-- RIGHT -->
+        <div class="instagram-visual">
+          <div class="instagram-glow"></div>
+
+          <div class="phone-card">
+            <div class="phone-header">
+              <div class="profile">
+                <img
+                  src="https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=400&auto=format&fit=crop"
+                  alt="Perfil"
+                />
+
+                <div>
+                  <h4>@macedorepresentacoes_01</h4>
+                  <span>Representação Comercial</span>
+                </div>
+              </div>
+
+              <svg width="28" height="28" fill="#19546B" viewBox="0 0 24 24">
+                <path
+                  d="M7.8 2h8.4A5.8 5.8 0 0 1 22 7.8v8.4A5.8 5.8 0 0 1 16.2 22H7.8A5.8 5.8 0 0 1 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2Zm0 1.8A4 4 0 0 0 3.8 7.8v8.4a4 4 0 0 0 4 4h8.4a4 4 0 0 0 4-4V7.8a4 4 0 0 0-4-4Zm8.95 1.35a1.15 1.15 0 1 1 0 2.3 1.15 1.15 0 0 1 0-2.3ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 1.8A3.2 3.2 0 1 0 12 15.2 3.2 3.2 0 0 0 12 8.8Z"
+                />
+              </svg>
+            </div>
+
+            <div class="insta-preview">
+              <img
+                src="https://images.unsplash.com/photo-1521791136064-7986c2920216?q=80&w=1200&auto=format&fit=crop"
+                alt="Representação Comercial"
+              />
+
+              <div class="overlay"></div>
+
+              <div class="overlay-content">
+                <h3>Conexões que geram resultados</h3>
+
+                <p>
+                  Aproximamos marcas, distribuidores e clientes com foco em
+                  crescimento comercial.
+                </p>
+              </div>
+            </div>
+
+            <div class="stats">
+              <div>
+                <strong>+120</strong>
+                <span>Clientes</span>
+              </div>
+
+              <div>
+                <strong>+15</strong>
+                <span>Marcas</span>
+              </div>
+
+              <div>
+                <strong>B2B</strong>
+                <span>Atuação</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="float-card">
+            <strong>Atualizações semanais</strong>
+            <span>Novidades, marcas e oportunidades</span>
+          </div>
+        </div>
+      </div>
+      <div class="mr-section-divider"></div>
+    </section>
+    <script>
+      /* =========================
+         ANIMAÇÃO PREMIUM SUAVE
+      ========================= */
+      (function() {
+        const card = document.querySelector(".phone-card");
+        if (card) {
+          let position = 0;
+          function floatingAnimation() {
+            position += 0.015;
+            const y = Math.sin(position) * 10;
+            const rotate = Math.sin(position * 0.7) * 1.5;
+            card.style.transform = `translateY(${y}px) rotate(${rotate}deg)`;
+            requestAnimationFrame(floatingAnimation);
+          }
+          floatingAnimation();
+        }
+      })();
+    </script>
+
+  <!-- ============================================================
+       SEÇÃO 11 — FORMULÁRIO DE CONTATO
+       ============================================================ -->
+  <section id="contato" class="py-32 relative bg-[#F9FAFB]">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-20">
+        <div class="lg:col-span-5">
+          <span class="text-xs font-bold uppercase tracking-widest text-brand-accent mb-4 block">Contato</span>
+          <h2 class="text-5xl font-display font-black text-brand-navy leading-tight mb-8">Fale com a <span class="text-brand-petroleum">S. Macedo</span></h2>
+          <p class="text-brand-navy/60 mb-12">Fale conosco para saber mais sobre representação ou solicitar informações.</p>
+          
+          <div class="space-y-8">
+            <div class="flex items-center gap-6 group">
+              <div class="w-14 h-14 rounded-2xl bg-white shadow-lg flex items-center justify-center text-brand-accent group-hover:bg-brand-accent group-hover:text-white transition-all">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-phone" aria-hidden="true"><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"></path></svg>
+              </div>
+              <div>
+                <div class="text-xs font-bold text-brand-neutral uppercase tracking-widest">Telefone / WhatsApp</div>
+                <div class="text-[17px] sm:text-lg font-bold text-brand-navy whitespace-nowrap">(11) 98712-2890</div>
+              </div>
+            </div>
+            
+            <div class="flex items-center gap-6 group">
+              <div class="w-14 h-14 rounded-2xl bg-white shadow-lg flex items-center justify-center text-brand-petroleum group-hover:bg-brand-petroleum group-hover:text-white transition-all">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-mail" aria-hidden="true"><path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"></path><rect x="2" y="4" width="20" height="16" rx="2"></rect></svg>
+              </div>
+              <div>
+                <div class="text-xs font-bold text-brand-neutral uppercase tracking-widest">E-mail</div>
+                <div class="text-[13px] xs:text-[14px] sm:text-lg font-bold text-brand-navy">silviomacedo.negocios@gmail.com</div>
+              </div>
+            </div>
+            
+            <div class="flex items-center gap-6 group">
+              <div class="w-14 h-14 rounded-2xl bg-white shadow-lg flex items-center justify-center text-brand-navy group-hover:bg-brand-navy group-hover:text-white transition-all">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-instagram" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+              </div>
+              <div>
+                <div class="text-xs font-bold text-brand-neutral uppercase tracking-widest">Instagram</div>
+                <div class="text-[17px] sm:text-lg font-bold text-brand-navy whitespace-nowrap">@macedorepresentacoes_01</div>
+              </div>
+            </div>
+            
+            <div class="flex items-center gap-6 group">
+              <div class="w-14 h-14 rounded-2xl bg-white shadow-lg flex items-center justify-center text-[#0A66C2] group-hover:bg-[#0A66C2] group-hover:text-white transition-all">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-linkedin"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+              </div>
+              <div>
+                <div class="text-xs font-bold text-brand-neutral uppercase tracking-widest">LinkedIn</div>
+                <div class="text-[17px] sm:text-lg font-bold text-brand-navy whitespace-nowrap">/in/silviomacedo01</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="lg:col-span-7">
+          <div class="bg-white p-10 lg:p-16 rounded-[40px] shadow-2xl border border-brand-neutral/10">
+            <form id="form-contato" class="space-y-6">
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="space-y-2">
+                  <label class="text-xs font-bold text-brand-navy uppercase tracking-widest">Nome Completo</label>
+                  <input type="text" name="nome" required class="w-full bg-brand-neutral/5 border border-brand-neutral/20 rounded-xl px-6 py-4 focus:outline-none focus:border-brand-accent transition-all" placeholder="Seu nome"/>
+                </div>
+                <div class="space-y-2">
+                  <label class="text-xs font-bold text-brand-navy uppercase tracking-widest">CNPJ</label>
+                  <input type="text" name="cnpj" required pattern="\d{2}\.\d{3}\.\d{3}/\d{4}-\d{2}" class="w-full bg-brand-neutral/5 border border-brand-neutral/20 rounded-xl px-6 py-4 focus:outline-none focus:border-brand-accent transition-all" placeholder="00.000.000/0001-00"/>
+                </div>
+              </div>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="space-y-2">
+                  <label class="text-xs font-bold text-brand-navy uppercase tracking-widest">E-mail</label>
+                  <input type="email" name="email" required class="w-full bg-brand-neutral/5 border border-brand-neutral/20 rounded-xl px-6 py-4 focus:outline-none focus:border-brand-accent transition-all" placeholder="email@empresa.com.br"/>
+                </div>
+                <div class="space-y-2">
+                  <label class="text-xs font-bold text-brand-navy uppercase tracking-widest">WhatsApp</label>
+                  <input type="text" name="whatsapp" required pattern="\(\d{2}\) \d{5}-\d{4}" class="w-full bg-brand-neutral/5 border border-brand-neutral/20 rounded-xl px-6 py-4 focus:outline-none focus:border-brand-accent transition-all" placeholder="(11) 99999-9999"/>
+                </div>
+              </div>
+              <div class="space-y-2">
+                <label class="text-xs font-bold text-brand-navy uppercase tracking-widest">Mensagem</label>
+                <textarea rows="4" name="mensagem" class="w-full bg-brand-neutral/5 border border-brand-neutral/20 rounded-xl px-6 py-4 focus:outline-none focus:border-brand-accent transition-all" placeholder="Como podemos ajudar seu negócio?"></textarea>
+              </div>
+              <button type="submit" class="w-full bg-brand-navy text-white py-5 rounded-2xl font-bold flex items-center justify-center gap-3 hover:bg-brand-petroleum transition-all shadow-xl group">
+                <span>ENVIAR MENSAGEM</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right group-hover:translate-x-2 transition-transform" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="mr-section-divider"></div>
+  </section>
+
+  <!-- ============================================================
+       SEÇÃO 12 — TEXTO SEO
+       ============================================================ -->
+  <section class="py-16 bg-white border-t border-brand-neutral/10">
+    <div class="max-w-4xl mx-auto px-6 text-center text-brand-navy/50 text-sm leading-relaxed">
+      <h2 class="font-bold text-brand-navy/60 mb-2">Representante Comercial em São Paulo — Weck, Tecnocuba, Multiflon e Cerâmica Regina</h2>
+      <p>A S. Macedo é seu representante comercial em São Paulo, especializado na representação B2B para o setor de utilidades domésticas e gastronômicas. Nosso portfólio inclui os melhores utensílios profissionais, cubas inox, panelas e formas do mercado nacional. Oferecemos atendimento estratégico e personalizado para distribuidores, lojistas, e atacadistas em todo o Estado de São Paulo. Garantimos agilidade, cobertura de mercado e reposição garantida com os melhores fabricantes do país. Conheça nossa estrutura e eleve os resultados da sua loja ou operação com marcas de confiança e alto giro.</p>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SEÇÃO 13 — FOOTER
+       ============================================================ -->
+  <footer class="custom-footer">
+    <div class="footer-main">
+      <!-- Coluna 1 -->
+      <div class="brand">
+        <div class="brand-header">
+          <div class="brand-avatar">
+            <img src="/imagenspadrao/logo-sm.png" alt="S. Macedo Logo" class="w-full h-full object-cover" loading="lazy" decoding="async" width="52" height="52"/>
+          </div>
+          <div class="brand-name">S. Macedo Negócios e<br/>Representações Ltda.</div>
+        </div>
+        <p class="brand-tagline">Representando empresas de utensílios premium em São Paulo. Conectamos as melhores marcas ao seu negócio com excelência e compromisso.</p>
+        <div class="divider-short"></div>
+        <div class="social-links">
+          <a href="https://www.instagram.com/macedorepresentacoes_01" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Instagram">
+            <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"></path></svg>
+          </a>
+          <a href="https://www.linkedin.com/in/silviomacedo01" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"></path></svg>
+          </a>
+        </div>
+      </div>
+      
+      <!-- Coluna 2 -->
+      <div>
+        <div class="col-label">Marcas Representadas</div>
+        <div class="brand-list">
+          <a href="/representante-weck/" class="brand-item">
+            <div class="brand-dot"></div>
+            <span class="brand-item-name">WECK</span>
+          </a>
+          <a href="/representante-tecnocuba/" class="brand-item">
+            <div class="brand-dot"></div>
+            <span class="brand-item-name">TECNOCUBA</span>
+          </a>
+          <a href="/representante-multiflon/" class="brand-item">
+            <div class="brand-dot"></div>
+            <span class="brand-item-name">MULTIFLON</span>
+          </a>
+         <!-- <a href="/representante-ceramica-regina/" class="brand-item">
+            <div class="brand-dot"></div>
+            <span class="brand-item-name">CERÂMICA REGINA</span>
+          </a>-->
+        </div>
+      </div>
+      
+      <!-- Coluna 3 -->
+      <div>
+        <div class="col-label">Navegação</div>
+        <nav class="nav-list">
+          <a href="#home" class="nav-item">Home</a>
+          <a href="#portfolio" class="nav-item">Empresas</a>
+          <a href="#diferenciais" class="nav-item">Diferenciais</a>
+          <a href="#metodologia" class="nav-item">Como Trabalhamos</a>
+          <a href="#clientes" class="nav-item">Clientes</a>
+          <a href="#contato" class="nav-item">Contato</a>
+          <a href="#" class="nav-item">Política de Privacidade</a>
+          <a href="#" class="nav-item">Termos de Uso</a>
+        </nav>
+      </div>
+      
+      <!-- Coluna 4 -->
+      <div>
+        <div class="col-label">Contato Direto</div>
+        <div class="contact-list">
+          <a href="https://wa.me/5511987122890" target="_blank" rel="noopener noreferrer" class="contact-card">
+            <div class="contact-icon"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path></svg></div>
+            <div class="contact-info">
+              <div class="contact-type">WhatsApp</div>
+              <div class="contact-value">(11) 98712-2890</div>
+            </div>
+          </a>
+          <a href="mailto:silviomacedo.negocios@gmail.com" class="contact-card">
+            <div class="contact-icon"><svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"></path></svg></div>
+            <div class="contact-info">
+              <div class="contact-type">E-mail</div>
+              <div class="contact-value">silviomacedo.negocios@gmail.com</div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <p class="footer-copyright">© 2025 <span>S. Macedo Representações</span> — Todos os direitos reservados.</p>
+      <div class="footer-badge">
+        <div class="badge-dot"></div>São Paulo, SP · Brasil
+      </div>
+    </div>
+  </footer>
+
+</div> <!-- FIM CONTAINER HOME -->
+
+<script src="https://unpkg.com/lucide@latest"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+  /* =====================================================
+     JAVASCRIPT PURO (VANILLA JS) - SEM FRAMEWORKS
+     ===================================================== */
+  try {
+    lucide.createIcons();
+  } catch(err) {
+    console.warn('Lucide icons error:', err);
+  }
+
+  // Webhook Configuration
+  var WEBHOOK_MAKE = 'URL_WEBHOOK_CONTATO_HOME'; 
+
+  function enviarWebhook(dados) {
+    console.log('[MAKE] Dados enviados ao Webhook:', JSON.stringify(dados, null, 2));
+
+    if (!WEBHOOK_MAKE || WEBHOOK_MAKE === '' || WEBHOOK_MAKE === 'URL_WEBHOOK_CONTATO_HOME') {
+      console.log('[MAKE] Webhook não configurado adequadamente ou usa a URL de placeholder. O envio real não foi realizado.');
+      return;
+    }
+    var xhr = new XMLHttpRequest();
+    xhr.open('POST', WEBHOOK_MAKE, true);
+    xhr.setRequestHeader('Content-Type', 'application/json');
+    xhr.onload = function() {
+      if (xhr.status >= 200 && xhr.status < 300) {
+        console.log('[MAKE] Webhook enviado com sucesso! Status:', xhr.status);
+      } else {
+        console.error('[MAKE] Erro no webhook. Status:', xhr.status);
+      }
+    };
+    xhr.onerror = function() {
+      console.error('[MAKE] Erro de rede ao enviar webhook.');
+    };
+    xhr.send(JSON.stringify(dados));
+  }
+
+  // =====================================================
+  // FORMULÁRIO DE CONTATO (ENVIAR MENSAGEM)
+  // =====================================================
+  var formContato = document.getElementById('form-contato');
+  if (formContato) {
+    formContato.addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      var payload = {
+        tipo: 'contato HOME',
+        nome: formContato.querySelector('[name="nome"]') ? formContato.querySelector('[name="nome"]').value : '',
+        cnpj: formContato.querySelector('[name="cnpj"]') ? formContato.querySelector('[name="cnpj"]').value : '',
+        email: formContato.querySelector('[name="email"]') ? formContato.querySelector('[name="email"]').value : '',
+        whatsapp: formContato.querySelector('[name="whatsapp"]') ? formContato.querySelector('[name="whatsapp"]').value.replace(/\D/g, '') : '',
+        mensagem: formContato.querySelector('[name="mensagem"]') ? formContato.querySelector('[name="mensagem"]').value : '',
+        data_envio: new Date().toISOString()
+      };
+
+      enviarWebhook(payload);
+
+      var container = formContato.parentElement;
+      formContato.style.display = 'none';
+      var msgDiv = document.createElement('div');
+      msgDiv.id = 'contato-sucesso';
+      msgDiv.className = 'text-center py-10 w-full';
+      msgDiv.innerHTML = "<div class='w-20 h-20 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-6'><svg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><circle cx='12' cy='12' r='10'></circle><path d='m9 12 2 2 4-4'></path></svg></div><h3 class='text-2xl font-display font-black text-brand-navy mb-4 uppercase'>MENSAGEM ENVIADA COM SUCESSO</h3><p class='text-brand-navy/60'>Retornaremos seu contato em breve.</p>";
+      container.appendChild(msgDiv);
+
+      setTimeout(function() {
+        var sm = document.getElementById('contato-sucesso');
+        if (sm) sm.remove();
+        formContato.style.display = 'block';
+        formContato.reset();
+      }, 4000);
+    });
+  }
+
+  // =====================================================
+  // SCROLL EFFECT NA NAVBAR
+  // =====================================================
+  var navbar = document.querySelector('nav');
+  if (navbar) {
+    window.addEventListener('scroll', function() {
+      if (window.scrollY > 10) {
+        navbar.classList.remove('py-9', 'shadow-md');
+        navbar.classList.add('py-5', 'shadow-xl');
+      } else {
+        navbar.classList.add('py-9', 'shadow-md');
+        navbar.classList.remove('py-5', 'shadow-xl');
+      }
+    });
+  }
+
+  // =====================================================
+  // TOGGLE DO MENU MOBILE (Hambúrguer <=> X)
+  // =====================================================
+  var mobileToggle = document.getElementById('mobile-menu-button');
+  var mobileMenu = document.querySelector('nav .absolute.top-full');
+  var hamburgerIcon = document.getElementById('hamburger-icon');
+  var closeIcon = document.getElementById('close-icon');
+
+  if (mobileMenu && mobileToggle) {
+    mobileMenu.id = 'mobile-menu';
+    mobileMenu.style.display = 'none';
+    
+    mobileToggle.addEventListener('click', function() {
+      var isMenuOpen = mobileMenu.style.display === 'block';
+      
+      if (isMenuOpen) {
+        mobileMenu.style.display = 'none';
+        hamburgerIcon.classList.remove('hidden');
+        closeIcon.classList.add('hidden');
+      } else {
+        mobileMenu.style.display = 'block';
+        hamburgerIcon.classList.add('hidden');
+        closeIcon.classList.remove('hidden');
+      }
+    });
+  }
+
+  // =====================================================
+  // SMOOTH SCROLL PARA LINKS ÂNCORA
+  // =====================================================
+  var anchors = document.querySelectorAll('a[href^="#"]');
+  for (var i = 0; i < anchors.length; i++) {
+    anchors[i].addEventListener('click', function(e) {
+      e.preventDefault();
+      if (mobileMenu) {
+        mobileMenu.style.display = 'none';
+        if (hamburgerIcon) hamburgerIcon.classList.remove('hidden');
+        if (closeIcon) closeIcon.classList.add('hidden');
+      }
+      var targetStr = this.getAttribute('href');
+      if (targetStr && targetStr !== '#') {
+        var target = document.querySelector(targetStr);
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth' });
+        }
+      }
+    });
+  }
+
+  // =====================================================
+  // ANIMAÇÕES DE SCROLL (IntersectionObserver)
+  // =====================================================
+  if ('IntersectionObserver' in window) {
+    var animObserver = new IntersectionObserver(function(entries) {
+      for (var ai = 0; ai < entries.length; ai++) {
+        if (entries[ai].isIntersecting) {
+          var el = entries[ai].target;
+          el.style.opacity = '1';
+          el.style.transform = 'translateY(0) translateX(0) scale(1)';
+          el.classList.add('is-visible'); 
+          animObserver.unobserve(el);
+        }
+      }
+    }, { threshold: 0.1 });
+
+    var animEls = document.querySelectorAll('.js-scroll-anim');
+    for (var ae = 0; ae < animEls.length; ae++) {
+      animObserver.observe(animEls[ae]);
+    }
+  }
+
+  // =====================================================
+  // MÁSCARAS DE ENTRADA (CNPJ E WHATSAPP)
+  // =====================================================
+  function applyMasks() {
+    var cnpjInputs = document.querySelectorAll('input[name="cnpj"]');
+    var whatsappInputs = document.querySelectorAll('input[name="whatsapp"]');
+
+    cnpjInputs.forEach(function(input) {
+      input.addEventListener('input', function(e) {
+        var x = e.target.value.replace(/\D/g, '').match(/(\d{0,2})(\d{0,3})(\d{0,3})(\d{0,4})(\d{0,2})/);
+        if (!x) return;
+        e.target.value = !x[2] ? x[1] : x[1] + '.' + x[2] + (x[3] ? '.' + x[3] : '') + (x[4] ? '/' + x[4] : '') + (x[5] ? '-' + x[5] : '');
+      });
+    });
+
+    whatsappInputs.forEach(function(input) {
+      input.addEventListener('input', function(e) {
+        var x = e.target.value.replace(/\D/g, '').match(/(\d{0,2})(\d{0,5})(\d{0,4})/);
+        if (!x) return;
+        if (x[3]) {
+            e.target.value = '(' + x[1] + ') ' + x[2] + '-' + x[3];
+        } else if (x[2]) {
+            e.target.value = '(' + x[1] + ') ' + x[2];
+        } else {
+            e.target.value = x[1];
+        }
+      });
+    });
+  }
+  applyMasks();
+
+  // =====================================================
+  // PREFETCH INTELIGENTE (NAVEGAÇÃO)
+  // =====================================================
+  function setupPrefetch() {
+    var navLinks = document.querySelectorAll('nav a[href^="#"]');
+    navLinks.forEach(function(link) {
+      link.addEventListener('mouseenter', function() {
+        var href = link.getAttribute('href');
+        if(href.startsWith('#') && href.length > 1) {
+          var sectionId = href.substring(1);
+          var section = document.getElementById(sectionId);
+          if (section) {
+            var imgs = section.querySelectorAll('img[loading="lazy"]');
+            imgs.forEach(function(img) {
+              img.loading = 'eager';
+            });
+          }
+        }
+      }, { once: true });
+    });
+  }
+  setupPrefetch();
+
+  // =====================================================
+  // ANIMAÇÃO DE PONTOS THREE.JS (HERO SECTION)
+  // =====================================================
+  if (typeof THREE !== 'undefined') {
+      const SEPARATION = 150;
+      const AMOUNTX = 40;
+      const AMOUNTY = 60;
+      const POINT_COLOR = '#C6C6C6'; 
+      const BACKGROUND_COLOR = '#0D1F30'; // bg-brand-navy
+
+      let scene, camera, renderer, animationId, count = 0;
+
+      function initScene() {
+          const container = document.getElementById('canvas-container');
+          const heroSection = document.getElementById('home');
+          if (!container || !heroSection) return;
+
+          const width = window.innerWidth;
+          const height = heroSection.offsetHeight;
+
+          scene = new THREE.Scene();
+          scene.fog = new THREE.Fog(BACKGROUND_COLOR, 2000, 10000);
+
+          camera = new THREE.PerspectiveCamera(60, width / height, 1, 10000);
+          camera.position.set(0, 355, 1220);
+
+          renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+          renderer.setPixelRatio(window.devicePixelRatio);
+          renderer.setSize(width, height);
+          renderer.setClearColor(0x000000, 0); // Transparente para ver a imagem de fundo
+
+          container.appendChild(renderer.domElement);
+
+          const positions = [];
+          const colors = [];
+          const geometry = new THREE.BufferGeometry();
+
+          for (let ix = 0; ix < AMOUNTX; ix++) {
+              for (let iy = 0; iy < AMOUNTY; iy++) {
+                  const x = ix * SEPARATION - (AMOUNTX * SEPARATION) / 2;
+                  const y = 0; 
+                  const z = iy * SEPARATION - (AMOUNTY * SEPARATION) / 2;
+
+                  positions.push(x, y, z);
+
+                  const colorHex = parseInt(POINT_COLOR.replace('#', ''), 16);
+                  const r = (colorHex >> 16) & 255;
+                  const g = (colorHex >> 8) & 255;
+                  const b = colorHex & 255;
+
+                  colors.push(r / 255, g / 255, b / 255);
+              }
+          }
+
+          geometry.setAttribute('position', new THREE.Float32BufferAttribute(positions, 3));
+          geometry.setAttribute('color', new THREE.Float32BufferAttribute(colors, 3));
+
+          const material = new THREE.PointsMaterial({
+              size: 8,
+              vertexColors: true,
+              transparent: true,
+              opacity: 0.7,
+              sizeAttenuation: true,
+          });
+
+          const points = new THREE.Points(geometry, material);
+          scene.add(points);
+
+          animate();
+          window.addEventListener('resize', onWindowResize);
+      }
+
+      function animate() {
+          animationId = requestAnimationFrame(animate);
+
+          const positionAttribute = scene.children[0].geometry.attributes.position;
+          const positions = positionAttribute.array;
+
+          let i = 0;
+          for (let ix = 0; ix < AMOUNTX; ix++) {
+              for (let iy = 0; iy < AMOUNTY; iy++) {
+                  const index = i * 3;
+                  positions[index + 1] = Math.sin((ix + count) * 0.3) * 50 + Math.sin((iy + count) * 0.5) * 50;
+                  i++;
+              }
+          }
+
+          positionAttribute.needsUpdate = true;
+          renderer.render(scene, camera);
+          count += 0.1;
+      }
+
+      function onWindowResize() {
+          const heroSection = document.getElementById('home');
+          if(!heroSection) return;
+          const width = window.innerWidth;
+          const height = heroSection.offsetHeight;
+          camera.aspect = width / height;
+          camera.updateProjectionMatrix();
+          renderer.setSize(width, height);
+      }
+
+      function cleanup() {
+          if (animationId) cancelAnimationFrame(animationId);
+          if (scene && renderer) {
+              scene.traverse((object) => {
+                  if (object instanceof THREE.Points) {
+                      object.geometry.dispose();
+                      if (Array.isArray(object.material)) {
+                          object.material.forEach((material) => material.dispose());
+                      } else {
+                          object.material.dispose();
+                      }
+                  }
+              });
+              renderer.dispose();
+              const container = document.getElementById('canvas-container');
+              if (container && renderer.domElement) {
+                  container.removeChild(renderer.domElement);
+              }
+          }
+          window.removeEventListener('resize', onWindowResize);
+      }
+
+      if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', initScene);
+      } else {
+          initScene();
+      }
+      window.addEventListener('beforeunload', cleanup);
+  }
+
+</script>
+</body>
+</html>
